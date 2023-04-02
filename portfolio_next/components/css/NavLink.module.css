@@ -1,5 +1,5 @@
 .NavLink:hover {
-    text-shadow: 1.5px 1.5px 0px theme("colors.primary.red");
+    text-shadow: 1px 1px 0px theme("colors.primary.red");
 }
 
 .NavLinkActive {

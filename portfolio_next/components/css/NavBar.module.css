@@ -1,12 +1,11 @@
 .logo {
-    @apply font-bold text-3xl;
+    @apply font-bold text-3xl text-slate-400;
     animation-name: animation-logo;
     animation-duration: 500ms;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
-    animation-delay: 300ms;
+    animation-delay: 1400ms;
     transform: translate(3px, 3px);
-    color: theme("colors.slate.400");
 }
 
 @keyframes animation-logo {

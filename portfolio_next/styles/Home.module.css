@@ -1,0 +1,54 @@
+.headingName {
+    @apply text-slate-400;
+    animation: animation-fade-in 500ms ease-in-out 1400ms;
+    animation-fill-mode: forwards;
+}
+
+.headingLetter {
+    @apply font-bold inline-block;
+    animation: animation-reveal 500ms ease-in-out 1400ms;
+    animation-fill-mode: forwards;
+}
+
+.image {
+    @apply opacity-0;
+    animation: animation-image-reveal 1200ms ease-in-out 300ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animation-fade-in {
+    100% {
+        @apply text-white;
+    }
+}
+
+@keyframes animation-reveal {
+    100% {
+        @apply -translate-x-1 -translate-y-1;
+        text-shadow: 3px 3px 0px theme("colors.primary.pink"), 6px 6px 0px theme("colors.primary.red");
+    }
+}
+
+@keyframes animation-image-reveal {
+    0% {
+        rotate: z 70deg;
+        transform: translate(600px, -600px);
+        box-shadow: 200px -200px 0px theme("colors.primary.pink"), 400px -400px 0px theme("colors.primary.red");
+    }
+
+    50% {
+        transform: translate(-350px, 350px);
+        box-shadow: -100px 100px 0px theme("colors.primary.pink"), -200px 200px 0px theme("colors.primary.red");
+    }
+
+    70% {
+        transform: translate(50px, -50px);
+        box-shadow: 10px -10px 0px theme("colors.primary.pink"), 20px -20px 0px theme("colors.primary.red");
+        animation-fill-mode: ease-in;
+    }
+
+    100% {
+        @apply shadow-image opacity-100;
+        animation-fill-mode: ease-in-out;
+    }
+}
