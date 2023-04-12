@@ -2,14 +2,19 @@ import Link from "next/link";
 import styles from "./css/NavBar.module.css";
 import NavLink from "./NavLink";
 import Button from "./Button";
+import { useEffect } from "react";
 
 
 export default function NavBar() {
+    // useEffect(() => {
+    //     setTimeout(() => )
+    // }, []);
+
     return (
         <nav className="w-full flex justify-between items-center">
             <div className={styles.logo}>
                 <Link href="/">
-                    Aquib
+                    A
                 </Link>
             </div>
             <div className="flex flex-row gap-x-2 items-center">

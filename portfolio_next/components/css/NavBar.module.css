@@ -1,19 +1,6 @@
 .logo {
-    @apply font-bold text-3xl text-slate-400;
-    animation-name: animation-logo;
-    animation-duration: 500ms;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
-    animation-delay: 1400ms;
-    transform: translate(3px, 3px);
-}
-
-@keyframes animation-logo {
-    100% {
-        text-shadow:
+    @apply font-bold text-4xl text-white;
+    text-shadow:
             3px 3px 0px theme("colors.primary.pink"),
             6px 6px 0px theme("colors.primary.red");
-        transform: translate(-3px, -3px);
-        color: theme("colors.white");
-    }
 }

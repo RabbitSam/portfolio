@@ -1,7 +1,5 @@
 .headingName {
-    @apply text-slate-400;
-    animation: animation-fade-in 500ms ease-in-out 1400ms;
-    animation-fill-mode: forwards;
+    @apply text-white;
 }
 
 .headingLetter {
@@ -11,16 +9,11 @@
 }
 
 .image {
-    @apply opacity-0;
+    @apply opacity-0 blur-md;
     animation: animation-image-reveal 1200ms ease-in-out 300ms;
     animation-fill-mode: forwards;
 }
 
-@keyframes animation-fade-in {
-    100% {
-        @apply text-white;
-    }
-}
 
 @keyframes animation-reveal {
     100% {
@@ -48,7 +41,7 @@
     }
 
     100% {
-        @apply shadow-image opacity-100;
+        @apply shadow-image opacity-100 blur-0;
         animation-fill-mode: ease-in-out;
     }
 }
