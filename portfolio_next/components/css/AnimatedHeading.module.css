@@ -1,0 +1,52 @@
+.heading {
+    @apply text-center text-4xl font-bold opacity-0;
+    animation: animation-heading 500ms ease-in-out forwards;
+}
+
+.heading::before {
+    @apply h-[1px] w-1/4 inline-block absolute bottom-0 left-1/4 -z-10;
+    content: "";
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, theme(colors.primary.pink) 75%, theme(colors.primary.red));
+    background-size: 200% 100%;
+    background-position: center left;
+    animation: animation-heading-before 500ms ease-in-out forwards;
+}
+
+.heading::after {
+    @apply h-[1px] w-1/4 inline-block absolute bottom-0 right-1/4 -z-10;
+    content: "";
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0) 50%, theme(colors.primary.pink) 75%, theme(colors.primary.red));
+    background-size: 200% 100%;
+    background-position: center right;
+    animation: animation-heading-after 500ms ease-in-out forwards;
+}
+
+@keyframes animation-heading {
+    from {
+        @apply opacity-0;
+    }
+
+    to {
+        @apply opacity-100;
+    }
+}
+
+@keyframes animation-heading-before {
+    from {
+        background-position: center left;
+    }
+
+    to {
+        background-position: center right;
+    }
+}
+
+@keyframes animation-heading-after {
+    from {
+        background-position: center right;
+    }
+
+    to {
+        background-position: center left;
+    }
+}

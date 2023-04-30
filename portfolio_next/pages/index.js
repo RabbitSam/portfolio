@@ -3,13 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from '@/styles/Home.module.css';
 import Layout from '@/components/Layout';
-import Header from '@/components/Header';
-import Main from '@/components/Main';
-import Footer from '@/components/Footer';
-import NavBar from '@/components/NavBar';
 import Button from '@/components/Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import sam from '@/public/images/sam.png';
 
 export default function Home() {
@@ -31,13 +25,13 @@ export default function Home() {
 							Web Developer
 						</h1>
 						<div className='pt-4'>
-							<Link href="/">
+							<a href="/projects">
 								<Button textSize="lg" group="group/button">
 									See My Work{' '}
 									<span className='border-t-2 border-slate-400 inline-block mb-1 translate-x-2 group-hover/button:px-1.5 group-hover/button:border-white transition-all'/>
 									<span className='mb-px border-e-2 border-b-2 p-[3px] inline-block -rotate-45 border-slate-400 group-hover/button:border-white' />
 								</Button>
-							</Link>
+							</a>
 						</div>
 					</div>
 					<Image
