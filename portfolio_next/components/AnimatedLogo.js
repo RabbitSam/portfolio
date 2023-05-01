@@ -49,8 +49,8 @@ export default function AnimatedLogo({logo, description, className, keyframes, k
     }, []);
 
     return (
-        <div className="relative select-none">
-            <div ref={logoRef} aria-description={description} className={className}>
+        <div className="relative select-none" role="img" aria-label={description} >
+            <div ref={logoRef} className={className}>
                 {logo}
             </div>
             <div ref={targetRef} data-revealed="false" aria-hidden="true" className={`${className} opacity-0 absolute left-0 top-0`}>

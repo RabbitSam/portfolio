@@ -1,5 +1,5 @@
 .heading {
-    @apply text-center text-4xl font-bold opacity-0;
+    @apply text-center text-3xl font-bold opacity-0;
     animation: animation-heading 500ms ease-in-out forwards;
 }
 

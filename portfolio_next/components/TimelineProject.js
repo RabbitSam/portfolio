@@ -22,7 +22,7 @@ export default function TimelineProject({ title, timeframe, logo, listContent, t
                 <AnimatedImage src={image.link} alt={image.alt} className={"h-36 w-auto border-2 border-e-primary-pink border-b-primary-pink md:h-56"}/>
             </div>
             <div className="col-span-11 me-24 mb-7 sm:me-0 lg:col-span-6">
-                <div className="flex gap-x-2.5 relative">
+                <div className="flex gap-x-2.5 relative me-4 sm:me-0">
                     {logo}
                     <HorizontalAnimatedText
                         direction={animationDirection}

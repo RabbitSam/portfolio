@@ -1,19 +1,14 @@
-.headingName {
-    @apply text-white;
-}
-
 .headingLetter {
     @apply font-bold inline-block;
-    animation: animation-reveal 500ms ease-in-out 1400ms;
+    animation: animation-reveal 300ms ease-in-out 500ms;
     animation-fill-mode: forwards;
 }
 
 .image {
     @apply opacity-0 blur-md;
-    animation: animation-image-reveal 1200ms ease-in-out;
+    animation: animation-image-reveal 500ms ease-in-out;
     animation-fill-mode: forwards;
 }
-
 
 @keyframes animation-reveal {
     100% {
@@ -23,6 +18,12 @@
 }
 
 @keyframes animation-image-reveal {
+    to {
+        @apply shadow-image opacity-100 blur-0 -translate-x-[3px] -translate-y-[3px]
+    }
+}
+
+/* @keyframes animation-image-reveal {
     0% {
         rotate: z 70deg;
         transform: translate(600px, -600px);
@@ -44,4 +45,4 @@
         @apply shadow-image opacity-100 blur-0;
         animation-fill-mode: ease-in-out;
     }
-}
+} */

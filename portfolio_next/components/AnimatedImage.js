@@ -70,7 +70,9 @@ export default function AnimatedImage({src, alt, className}) {
         });
 
         const observer = new IntersectionObserver(reveal, options);
-        observer.observe(targetRef.current);
+        if (targetRef.current) {
+            observer.observe(targetRef.current);
+        }
     }, []);
 
 

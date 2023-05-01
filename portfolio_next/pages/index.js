@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import Image from 'next/image';
 import styles from '@/styles/Home.module.css';
 import Layout from '@/components/Layout';
@@ -13,15 +12,13 @@ export default function Home() {
 			<Head>
 				<title>Home | Sheikh Aquib Mahmood</title>
 				<meta name="description" content="Sheikh Aquib Mahmood's Portfolio" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<link rel="icon" href="/headicon.ico" />
 			</Head>
 			<Layout>
 				<div className='flex flex-col-reverse gap-y-14 justify-center items-center h-full overflow-hidden lg:flex-row lg:gap-x-16'>
 					<div className="overflow-visible">
-						<h1 className={`${styles.headingName} text-5xl leading-tight select-none`}>
-							Hey there, I'm<br />
-							<span className={styles.headingLetter}>S</span>heikh <span className={styles.headingLetter}>A</span>quib <br className='lg:hidden' /><span className={styles.headingLetter}>M</span>ahmood,<br />
+						<h1 className={`text-white text-4xl leading-tight select-none lg:text-5xl`}>
+							Hey there, I'm <br />
+							<span className='font-semibold'>Sheikh <span className={styles.headingLetter}>A</span>quib <br className='sm:hidden' />Mahmood,<br /></span>
 							Web Developer
 						</h1>
 						<div className='pt-4'>

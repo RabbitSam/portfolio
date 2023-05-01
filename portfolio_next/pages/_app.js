@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import '@/styles/globals.css'
 import { useEffect, useRef } from 'react';
 
@@ -21,6 +22,10 @@ export default function App({ Component, pageProps }) {
 			<div className='cursor' ref={ref}/>
 			<div className='h-full w-full -z-40 fixed backdrop-blur-[1000px]'/>
 		</div>
+		<Head>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<link rel="icon" href="/headicon.ico" />			
+		</Head>
 		<Component {...pageProps} />
 	</>
 	);

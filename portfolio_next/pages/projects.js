@@ -138,8 +138,8 @@ export default function Projects() {
                         ]}
                         technologies={["React.js", "Express.js", "MongoDB", "Bootstrap 5"]}
                         projectLinks={{
-                            github: "https://github.com/RabbitSam/portfolio",
-                            site: "/"
+                            github: "https://github.com/RabbitSam/KanbanBoard",
+                            site: "http://ec2-13-53-137-65.eu-north-1.compute.amazonaws.com/"
                         }}
                         image={{
                             link: kanbanBoardImage,
