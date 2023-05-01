@@ -1,5 +1,5 @@
 .logo {
-    @apply font-bold text-4xl text-white;
+    @apply font-bold text-4xl text-white z-50;
     text-shadow:
             3px 3px 0px theme("colors.primary.pink"),
             6px 6px 0px theme("colors.primary.red");

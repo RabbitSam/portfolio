@@ -7,7 +7,7 @@ const fullConfig = resolveConfig(tailwindConfig);
 const [pinkColor, redColor] = [fullConfig.theme.colors.primary.pink, fullConfig.theme.colors.primary.red]
 const imageBoxShadow = fullConfig.theme.boxShadow.image.replace('theme("colors.primary.pink")', pinkColor).replace('theme("colors.primary.red")', redColor);
 
-export default function AnimatedImage({src}) {
+export default function AnimatedImage({src, alt, className}) {
     const targetRef = useRef(null);
 
     const animationFill = "forwards";
@@ -75,6 +75,6 @@ export default function AnimatedImage({src}) {
 
 
     return (
-        <Image ref={targetRef} src={src} data-revealed="false" className="h-auto w-72 rounded-lg border-2 border-e-primary-pink border-b-primary-pink opacity-0 lg:h-60 lg:w-auto" />
+        <Image ref={targetRef} src={src} alt={alt} data-revealed="false" className={`${className} opacity-0 rounded-md`}/>
     )
 }

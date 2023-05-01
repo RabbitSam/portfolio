@@ -33,7 +33,7 @@ export default function Projects() {
                 <div className="relative text-center">
                     <AnimatedHeading content="My Projects"/>
                 </div>
-                <div className="grid grid-cols-12 gap-x-10">
+                <div className="grid grid-cols-12 gap-x-10 ">
                     <div className="col-span-1 row-span-2 lg:row-span-1 h-32">
                         <CircleWithLine hideCircle={true} />
                     </div>
@@ -87,7 +87,7 @@ export default function Projects() {
                         }}
                         image={{
                             link: portfolioImage,
-                            href: "Portfolio Website."
+                            alt: "Portfolio Website."
                         }}
                     />
 
@@ -143,7 +143,7 @@ export default function Projects() {
                         }}
                         image={{
                             link: kanbanBoardImage,
-                            href: "Kanban Board Website."
+                            alt: "Kanban Board Website."
                         }}
                     />
                 </div>

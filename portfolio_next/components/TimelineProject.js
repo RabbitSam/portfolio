@@ -19,9 +19,9 @@ export default function TimelineProject({ title, timeframe, logo, listContent, t
                 <CircleWithLine />
             </div>
             <div className="col-span-11 mb-7 pt-2 ps-1 pb-2 lg:col-span-5 lg:hidden">
-                <AnimatedImage src={image.link} alt={image.alt}/>
+                <AnimatedImage src={image.link} alt={image.alt} className={"h-36 w-auto border-2 border-e-primary-pink border-b-primary-pink md:h-56"}/>
             </div>
-            <div className="col-span-11 mb-7 lg:col-span-6">
+            <div className="col-span-11 me-24 mb-7 sm:me-0 lg:col-span-6">
                 <div className="flex gap-x-2.5 relative">
                     {logo}
                     <HorizontalAnimatedText
@@ -45,7 +45,7 @@ export default function TimelineProject({ title, timeframe, logo, listContent, t
                 <div className="mt-4">
                     <AnimatedUnorderedList content={listContent}/>
                 </div>
-                <div className="mt-4 flex gap-x-2">
+                <div className="mt-4 flex gap-x-2 flex-wrap">
                     <HorizontalAnimatedText direction={animationDirection} duration={animationDuration} delay={0}>
                         <strong>Key technologies:</strong>
                     </HorizontalAnimatedText>
@@ -72,8 +72,8 @@ export default function TimelineProject({ title, timeframe, logo, listContent, t
                     </HorizontalAnimatedText>
                 </small>
             </div>
-            <div className="col-span-11 hidden mb-7 lg:col-span-5 lg:block">
-                <AnimatedImage src={image.link} alt={image.alt}/>
+            <div className="col-span-11 hidden mb-7 lg:col-span-5 lg:block pt-5">
+                <AnimatedImage src={image.link} alt={image.alt} className={"h-64 w-auto border-2 border-e-primary-pink border-b-primary-pink lg:h-56 xl:h-64"}/>
             </div>
         </>
     )

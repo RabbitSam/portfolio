@@ -21,15 +21,15 @@ export default function Home() {
 					<div className="overflow-visible">
 						<h1 className={`${styles.headingName} text-5xl leading-tight select-none`}>
 							Hey there, I'm<br />
-							<span className={styles.headingLetter}>S</span>heikh <span className={styles.headingLetter}>A</span>quib <span className={styles.headingLetter}>M</span>ahmood,<br />
+							<span className={styles.headingLetter}>S</span>heikh <span className={styles.headingLetter}>A</span>quib <br className='lg:hidden' /><span className={styles.headingLetter}>M</span>ahmood,<br />
 							Web Developer
 						</h1>
 						<div className='pt-4'>
 							<a href="/projects">
 								<Button textSize="lg" group="group/button">
 									See My Work{' '}
-									<span className='border-t-2 border-slate-400 inline-block mb-1 translate-x-2 group-hover/button:px-1.5 group-hover/button:border-white transition-all'/>
-									<span className='mb-px border-e-2 border-b-2 p-[3px] inline-block -rotate-45 border-slate-400 group-hover/button:border-white' />
+									<span className='border-t-2 lg:border-slate-400 inline-block mb-1 translate-x-2 group-hover/button:px-1.5 group-hover/button:border-white transition-all'/>
+									<span className='mb-px border-e-2 border-b-2 p-[3px] inline-block -rotate-45 lg:border-slate-400 group-hover/button:border-white' />
 								</Button>
 							</a>
 						</div>
