@@ -2,9 +2,16 @@ import Head from "next/head";
 import Layout from "@/components/Layout";
 import AnimatedHeading from "@/components/AnimatedHeading";
 import CircleWithLine from "@/components/CircleWithLine";
-import TimelineExperience from "@/components/TimelineExperience";
-import wtLogo from "@/public/images/wtLogo.png";
-import configuraLogo from "@/public/images/configuraLogo.png";
+import DualTimelineItem from "@/components/DualTimelineItem";
+
+
+function WorkTitle({ companyTitle, jobTitle}) {
+    return (
+        <>
+            {companyTitle} <br/>&ndash; <em className="font-semibold">{jobTitle}</em>
+        </>
+    );
+}
 
 
 export default function WorkExperience() {
@@ -25,10 +32,11 @@ export default function WorkExperience() {
                         </div>
                     </div>
                     
-                    <TimelineExperience
+                    <DualTimelineItem
                         position={"right"}
-                        companyTitle={"Wunderman Thompson Studios, Bangladesh"}
-                        jobTitle={"Web Developer"}
+                        title={
+                            <WorkTitle companyTitle={"Wunderman Thompson Studios, Bangladesh"} jobTitle={"Web Developer"} />
+                        }
                         listContent={[
                             "Created and deployed Landing Pages and EDM's (emails) for Microsoft."
                         ]}
@@ -38,10 +46,11 @@ export default function WorkExperience() {
                         timeline={"Jan 22 - Mar 23"}
                     />
 
-                    <TimelineExperience
+                    <DualTimelineItem
                         position={"left"}
-                        companyTitle={"Configura, Malaysia"}
-                        jobTitle={"Application Developer Intern"}
+                        title={
+                            <WorkTitle companyTitle={"Configura, Malaysia"} jobTitle={"Application Developer Intern"} />
+                        }
                         listContent={[
                             "Created several gadgets/dashboard items for Jira to increase overall productivity of different teams within the company.",
                             "Team of 2 developers and mentors"

@@ -4,6 +4,7 @@ import AnimatedImage from "./AnimatedImage";
 import CircleWithLine from "./CircleWithLine";
 import AnimatedUnorderedList from "./AnimatedUnorderedList";
 import HorizontalAnimatedText from "./HorizontalAnimatedText";
+import BoxLink from "./BoxLink";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -22,7 +23,7 @@ export default function TimelineProject({ title, timeframe, logo, listContent, t
                 <AnimatedImage src={image.link} alt={image.alt} className={"h-36 w-auto border-2 border-e-primary-pink border-b-primary-pink md:h-56"}/>
             </div>
             <div className="col-span-11 me-24 mb-7 sm:me-0 lg:col-span-6">
-                <div className="flex gap-x-2.5 relative me-4 sm:me-0">
+                <div className="flex gap-x-2.5 relative me-4 sm:">
                     {logo}
                     <HorizontalAnimatedText
                         direction={animationDirection}
@@ -59,16 +60,16 @@ export default function TimelineProject({ title, timeframe, logo, listContent, t
                 </div>
                 <small className="mt-4 flex gap-x-2 mb-16">
                     <HorizontalAnimatedText direction={animationDirection} duration={animationDuration} delay={0}>
-                        <a href={projectLinks.github} target="_blank" className='flex flex-row gap-x-1 justify-center items-center p-1 border rounded-md border-slate-400 bg-slate-950 bg-opacity-40 hover:text-white hover:border-white'>
+                        <BoxLink href={projectLinks.github}>
                             <FontAwesomeIcon icon={faGithub} className='h-4'/>
                             Github
-                        </a>
+                        </BoxLink>
                     </HorizontalAnimatedText>
                     <HorizontalAnimatedText direction={animationDirection} duration={animationDuration} delay={projectLinkAnimationDelay}>
-                        <a href={projectLinks.site} target="_blank" className='flex flex-row gap-x-1 justify-center items-center p-1 border rounded-md border-slate-400 bg-slate-950 bg-opacity-40 hover:text-white hover:border-white'>
+                        <BoxLink href={projectLinks.site}>
                             <FontAwesomeIcon icon={faLink} className='h-4'/>
                             View Site
-                        </a>
+                        </BoxLink>
                     </HorizontalAnimatedText>
                 </small>
             </div>

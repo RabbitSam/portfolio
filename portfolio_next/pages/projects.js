@@ -136,7 +136,7 @@ export default function Projects() {
                             "Users can create, edit and delete the boards, columns in the boards, and tasks in the columns.",
                             <>Features drag and drop functionality thanks to <em>react-beautiful-dnd</em>.</>
                         ]}
-                        technologies={["React.js", "Express.js", "MongoDB", "Bootstrap 5"]}
+                        technologies={["MongoDB", "Express.js", "React.js", "Node.js", "Bootstrap 5"]}
                         projectLinks={{
                             github: "https://github.com/RabbitSam/KanbanBoard",
                             site: "http://ec2-13-53-137-65.eu-north-1.compute.amazonaws.com/"

@@ -4,7 +4,7 @@ import styles from "./css/NavBar.module.css";
 import NavLink from "./NavLink";
 import Button from "./Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faDownload } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function NavBar() {
@@ -40,7 +40,7 @@ export default function NavBar() {
                 }
             });
         }
-    }
+    };
 
     return (
         <>
@@ -54,9 +54,16 @@ export default function NavBar() {
                     <NavLink title="Home" href="/"/>
                     <NavLink title="Projects" href="/projects"/>
                     <NavLink title="Work Experience" href="/work-experience"/>
+                    <NavLink title="Education" href="/education"/>
                     <NavLink title="Contact" href="/contact"/>
+
                     <div className="transition-all">
-                        <Button textSize="sm">Resume</Button>
+                        <Button textSize="sm">
+                        <a href="/resume.pdf" download="Resume - Sheikh Aquib Mahmood.pdf" className="flex gap-x-1 justify-center items-center" aria-label="Download Resume.">
+                            <FontAwesomeIcon icon={faDownload} className="h-3"/>
+                            Resume
+                        </a>
+                        </Button>
                     </div>
                 </nav>
                 <button className="lg:hidden z-50" onClick={onNavButtonClicked}>
@@ -69,7 +76,12 @@ export default function NavBar() {
                 <NavLink title="Work Experience" href="/work-experience"/>
                 <NavLink title="Contact" href="/contact"/>
                 <div className="transition-all pt-1 text-center">
-                    <Button textSize="base">Download Resume</Button>
+                    <Button textSize="base">
+                        <a href="/resume.pdf" download="Resume - Sheikh Aquib Mahmood.pdf" className="flex gap-x-1 justify-center items-center" aria-label="Download Resume.">
+                            <FontAwesomeIcon icon={faDownload} className="h-3"/>
+                            Download Resume
+                        </a>
+                    </Button>
                 </div>
             </div>
         </>

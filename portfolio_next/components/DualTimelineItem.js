@@ -1,6 +1,4 @@
 import CircleWithLine from "./CircleWithLine";
-import Image from "next/image";
-import wtLogo from "@/public/images/wtLogo.png";
 import { useEffect, useRef, useState } from "react";
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "@/tailwind.config";
@@ -8,7 +6,7 @@ import tailwindConfig from "@/tailwind.config";
 const fullConfig = resolveConfig(tailwindConfig);
 
 
-export default function TimelineExperience({ position, companyTitle, jobTitle, timeline, listContent, keyTechnologies }) {
+export default function DualTimelineItem({ position, title, timeline, listContent, keyTechnologies }) {
     const targetRef = useRef(null);
     const contentRef = useRef(null);
 
@@ -124,9 +122,9 @@ export default function TimelineExperience({ position, companyTitle, jobTitle, t
                 </div>
                 <div ref={contentRef} className={`opacity-0 -translate-x-1.5 ${positionMap.className[position]} col-span-10 flex flex-row sm:col-span-11 lg:col-span-5 ${positionMap.order[position].content}`}>
                     <div className={`border-[20px] border-y-transparent border-s-transparent lg: bg-transparent border-white w-0 h-0 -translate-x-6 -translate-y-1.5 z-10 ${positionMap.leftTriangle[position]}`}></div>
-                    <div className={`border-2 -translate-x-6 ${positionMap.translate[position]} -translate-y-10 p-3 rounded-lg shadow-image bg-slate-950 bg-opacity-60 ${positionMap.shadow[position]}`}>
+                    <div className={`border-2 w-full -translate-x-6 ${positionMap.translate[position]} -translate-y-10 p-3 rounded-lg shadow-image bg-slate-950 bg-opacity-60 ${positionMap.shadow[position]}`}>
                         <h2 ref={targetRef} data-revealed="false" className="text-xl sm:text-2xl sm:self-center mb-2">
-                            {companyTitle} <br/>&ndash; <em className="font-semibold">{jobTitle}</em>
+                            {title}
                         </h2>
                         <h3 className="font-semibold text-slate-400 contrast-more:text-white text-sm mix-blend-screen">
                             {timeline}
@@ -145,12 +143,14 @@ export default function TimelineExperience({ position, companyTitle, jobTitle, t
                                 ))
                             }
                         </ul>
-                        <div className="flex mt-4 gap-x-2 flex-wrap">
-                            <strong>Key Technologies:</strong>
-                            {keyTechnologies.map((item, index) => (
-                                <em key={index}>{item}{index === keyTechnologies.length - 1 ? "" : ","}</em>
-                            ))}
-                        </div>
+                        { keyTechnologies && keyTechnologies.length &&
+                            <div className="flex mt-4 gap-x-2 flex-wrap">
+                                <strong>Key Technologies:</strong>
+                                {keyTechnologies.map((item, index) => (
+                                    <em key={index}>{item}{index === keyTechnologies.length - 1 ? "" : ","}</em>
+                                ))}
+                            </div>
+                        }
                     </div>
                     <div className={`border-[20px] hidden border-y-transparent border-e-transparent ${positionMap.rightTriangle[position]} bg-transparent border-white w-0 h-0 -translate-x-6 ${positionMap.translate[position]} -translate-y-1.5 z-10`}></div>
                 </div>
