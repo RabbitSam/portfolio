@@ -10,11 +10,11 @@ body {
 }
 
 body {
-	@apply bg-slate-950 text-white min-h-[100vh] relative;
+	@apply bg-slate-950 text-white relative;
 }
 
 #__next {
-	@apply h-full
+	@apply h-full;
 }
 
 a {

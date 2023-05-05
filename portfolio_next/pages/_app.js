@@ -1,8 +1,15 @@
 import Head from 'next/head';
 import '@/styles/globals.css'
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import resolveConfig from "tailwindcss/resolveConfig";
+import tailwindConfig from "@/tailwind.config";
+import screenfull from "screenfull";
+
+const fullConfig = resolveConfig(tailwindConfig);
+
 
 export default function App({ Component, pageProps }) {
+	const scrollRef = useRef();
 	const ref = useRef();
 
 	useEffect(() => {
@@ -14,10 +21,6 @@ export default function App({ Component, pageProps }) {
 			left: `${clientX}px`
 			}, {duration: 1000, fill: "forwards"});
 		};
-
-		if (navigator.userAgent.match("/Android/i")) {
-			window.scrollTo(0, 1);
-		}
 	}, []);
 
 	return (
@@ -26,9 +29,9 @@ export default function App({ Component, pageProps }) {
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			<link rel="icon" href="/headicon.ico" />			
 		</Head>
-		<div className='fixed h-full w-full overflow-hidden -z-40 hidden lg:block'>
-			<div className='cursor' ref={ref}/>
-			<div className='h-full w-full -z-40 fixed backdrop-blur-[1000px]'/>
+		<div className='fixed h-[100vh] w-[100vw] overflow-hidden -z-40 hidden lg:block left-0 top-0'>
+			<div className='cursor -z-50' ref={ref}/>
+			<div className='-z-40 absolute left-0 top-0 h-full w-full backdrop-blur-3xl'></div>
 		</div>
 		<Component {...pageProps} />
 	</>
