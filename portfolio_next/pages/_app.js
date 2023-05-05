@@ -1,15 +1,9 @@
 import Head from 'next/head';
 import '@/styles/globals.css'
-import { useEffect, useRef, useState } from 'react';
-import resolveConfig from "tailwindcss/resolveConfig";
-import tailwindConfig from "@/tailwind.config";
-import screenfull from "screenfull";
-
-const fullConfig = resolveConfig(tailwindConfig);
+import { useEffect, useRef } from 'react';
 
 
 export default function App({ Component, pageProps }) {
-	const scrollRef = useRef();
 	const ref = useRef();
 
 	useEffect(() => {
