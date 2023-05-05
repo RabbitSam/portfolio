@@ -64,19 +64,19 @@ export default function Contact() {
                     <div className="flex flex-col w-full gap-y-3 lg:w-3/4">
                         <div>You can contact me via:</div>
                         <div className="w-full lg:w-fit flex flex-col lg:flex-row gap-y-2 lg:gap-x-2 lg:gap-y-0">
-                            <BoxLink href="mailto:aquibmahmood1637@gmail.com">
-                                <div className="flex flex-row justify-center items-center gap-x-1 p-1">
+                            <Button textSize="base">
+                                <a href="mailto:aquibmahmood1637@gmail.com" className="flex flex-row justify-center items-center gap-x-1 p-1">
                                     <FontAwesomeIcon icon={faSquareEnvelope} className="h-5"/>
                                     Email Address
-                                </div>
-                            </BoxLink>
+                                </a>
+                            </Button>
 
-                            <BoxLink href="https://www.linkedin.com/in/sheikh-aquib-mahmood-0068431b0/">
-                                <div className="flex flex-row justify-center items-center gap-x-1 p-1">
+                            <Button textSize="base">
+                                <a href="https://www.linkedin.com/in/sheikh-aquib-mahmood-0068431b0/" className="flex flex-row justify-center items-center gap-x-1 p-1">
                                     <FontAwesomeIcon icon={faLinkedin} className="h-5"/>
                                     LinkedIn
-                                </div>
-                            </BoxLink>
+                                </a>
+                            </Button>
                         </div>
                         
                         <div>Or, you can fill up the form below:</div>
