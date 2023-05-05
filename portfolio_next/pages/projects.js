@@ -43,7 +43,7 @@ export default function Projects() {
                     {/* Portfolio Website */}
                     <TimelineProject
                         title="Portfolio Website"
-                        timeframe="Mar 23 - Apr 23"
+                        timeframe="Mar 23 - May 23"
                         logo={
                             <AnimatedLogo 
                                 logo="A"

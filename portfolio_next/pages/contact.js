@@ -89,8 +89,9 @@ export default function Contact() {
                             name="name"
                             id="contactName"
                             placeholder="Please enter your name."
-                            className="rounded-sm p-2 text-slate-950"
+                            className="rounded-sm p-2 text-slate-950 disabled:bg-slate-500 disabled:cursor-not-allowed"
                             required
+                            disabled={isLoading}
                         />
 
                         <label htmlFor="contactEmail">Email Address:</label>
@@ -99,8 +100,9 @@ export default function Contact() {
                             name="email"
                             id="contactEmail"
                             placeholder="Please enter your email address."
-                            className="rounded-sm p-2 text-slate-950"
+                            className="rounded-sm p-2 text-slate-950 disabled:bg-slate-500 disabled:cursor-not-allowed"
                             required
+                            disabled={isLoading}
                         />
 
                         <label htmlFor="contactSubject">Subject:</label>
@@ -109,8 +111,9 @@ export default function Contact() {
                             name="subject"
                             id="contactSubject"
                             placeholder="Please enter a subject."
-                            className="rounded-sm p-2 text-slate-950"
+                            className="rounded-sm p-2 text-slate-950 disabled:bg-slate-500 disabled:cursor-not-allowed"
                             required
+                            disabled={isLoading}
                         />
                         
                         <label htmlFor="contactMessage">Message:</label>
@@ -119,8 +122,9 @@ export default function Contact() {
                             id="contactMessage"
                             rows="10"
                             placeholder="Please enter your message."
-                            className="rounded-sm p-2 text-slate-950"
+                            className="rounded-sm p-2 text-slate-950 disabled:bg-slate-500 disabled:cursor-not-allowed"
                             required
+                            disabled={isLoading}
                         >
                         </textarea>
 

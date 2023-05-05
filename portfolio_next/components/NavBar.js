@@ -74,6 +74,7 @@ export default function NavBar() {
                 <NavLink title="Home" href="/"/>
                 <NavLink title="Projects" href="/projects"/>
                 <NavLink title="Work Experience" href="/work-experience"/>
+                <NavLink title="Education" href="/education"/>
                 <NavLink title="Contact" href="/contact"/>
                 <div className="transition-all pt-1 text-center">
                     <Button textSize="base">
