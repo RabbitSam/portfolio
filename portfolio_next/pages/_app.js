@@ -20,6 +20,7 @@ export default function App({ Component, pageProps }) {
 	return (
 	<>
 		<Head>
+			<meta name="google-site-verification" content="K-OzgidwXooWciEOPQMeIXvMf_Mfea33ImqJ_Rupd2g" />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			<link rel="icon" href="/headicon.ico" />			
 		</Head>
