@@ -49,7 +49,7 @@ export default function Projects() {
                         logo={
                             <AnimatedLogo 
                                 logo={(
-                                    <div className="bg-white rounded-md pb-0.5 scale-95 text-[#884100] font-tazreen">
+                                    <div className="bg-white px-2 pt-0.5 scale-95 text-[#884100] border-[#884100] font-tazreen">
                                         T
                                     </div>
                                 )}
