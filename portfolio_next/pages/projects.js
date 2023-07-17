@@ -82,8 +82,8 @@ export default function Projects() {
                             />
                         }
                         listContent={[
-                            "Website that allows client to showcase their blogs, portfolios and work experience.",
-                            "Client can create, edit or delete their blogs, academic/copy writing/journalistic/creative publications, research interests and work experience however they see fit."
+                            "Website that allows the client to showcase their blogs, portfolios and work experience.",
+                            "The client can create, edit or delete their blogs, academic/copy writing/journalistic/creative publications, research interests and work experience however they see fit."
                         ]}
                         technologies={["Next.js", "TypeScript", "Mongoose (MongoDB)", "Vercel"]}
                         projectLinks={{
