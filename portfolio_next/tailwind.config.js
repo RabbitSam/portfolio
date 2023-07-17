@@ -14,6 +14,10 @@ module.exports = {
         }
       },
 
+      fontFamily: {
+        'tazreen': 'Garamond, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
+      },
+
       boxShadow: {
         button: '3px 3px 0px theme("colors.primary.pink"), 6px 6px 0px theme("colors.primary.red")',
         image: '6px 6px 0px theme("colors.primary.pink"), 12px 12px 0px theme("colors.primary.red")',

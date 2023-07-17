@@ -59,12 +59,15 @@ export default function TimelineProject({ title, timeframe, logo, listContent, t
                     }
                 </div>
                 <small className="mt-4 flex gap-x-2 mb-16">
-                    <HorizontalAnimatedText direction={animationDirection} duration={animationDuration} delay={0}>
-                        <BoxLink href={projectLinks.github}>
-                            <FontAwesomeIcon icon={faGithub} className='h-4'/>
-                            Github
-                        </BoxLink>
-                    </HorizontalAnimatedText>
+                    {
+                        !!projectLinks.github &&
+                        <HorizontalAnimatedText direction={animationDirection} duration={animationDuration} delay={0}>
+                            <BoxLink href={projectLinks.github}>
+                                <FontAwesomeIcon icon={faGithub} className='h-4'/>
+                                Github
+                            </BoxLink>
+                        </HorizontalAnimatedText>
+                    }
                     <HorizontalAnimatedText direction={animationDirection} duration={animationDuration} delay={projectLinkAnimationDelay}>
                         <BoxLink href={projectLinks.site}>
                             <FontAwesomeIcon icon={faLink} className='h-4'/>

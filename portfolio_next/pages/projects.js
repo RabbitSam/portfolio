@@ -6,6 +6,7 @@ import AnimatedLogo from "@/components/AnimatedLogo";
 import AnimatedHeading from "@/components/AnimatedHeading";
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "@/tailwind.config";
+import tazreenWebsiteImage from "@/public/images/tazreenWebsite.png";
 import portfolioImage from "@/public/images/portfolio.png";
 import kanbanBoardImage from "@/public/images/kanbanBoard.png";
 
@@ -39,6 +40,60 @@ export default function Projects() {
                     </div>
                     <div className="col-span-11 lg:col-span-6"></div>
                     <div className="col-span-11 lg:col-span-5"></div>
+
+                    {/* Tazreen's Website */}
+
+                    <TimelineProject
+                        title="Tazreen Jahan Bari's Website (Client Project)"
+                        timeframe="May 23 - Jul 23"
+                        logo={
+                            <AnimatedLogo 
+                                logo={(
+                                    <div className="bg-white rounded-md pb-0.5 scale-95 text-[#884100] font-tazreen">
+                                        T
+                                    </div>
+                                )}
+                                description="Tazreen Jahan Bari's Website's Logo."
+                                className="opacity-0 font-bold text-3xl blur-sm"
+                                keyframes={
+                                    new Keyframes(
+                                        [
+                                            {
+                                                filter: "none",
+                                                opacity: 1,
+                                                easing: "ease-in-out"
+                                            }
+                                        ],
+                                        [
+                                            {
+                                                filter: "blur(4px)",
+                                                opacity: 0,
+                                                easing: "ease-in-out"
+                                            }
+                                        ]
+                                    )
+                                }
+                                keepStyles={
+                                    {
+                                        filter: "none",
+                                        opacity: 1
+                                    }
+                                }
+                            />
+                        }
+                        listContent={[
+                            "Website that allows client to showcase their blogs, portfolios and work experience.",
+                            "Client can create, edit or delete their blogs, academic/copy writing/journalistic/creative publications, research interests and work experience however they see fit."
+                        ]}
+                        technologies={["Next.js", "TypeScript", "Mongoose (MongoDB)", "Vercel"]}
+                        projectLinks={{
+                            site: "https://tazreenjahanbari.com"
+                        }}
+                        image={{
+                            link: tazreenWebsiteImage,
+                            alt: "Tazreen Jahan Bari's Website."
+                        }}
+                    />
 
                     {/* Portfolio Website */}
                     <TimelineProject
