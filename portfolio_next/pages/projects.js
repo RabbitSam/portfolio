@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import Layout from "@/components/Layout";
 import CircleWithLine from "@/components/CircleWithLine";
 import TimelineProject from "@/components/TimelineProject";
@@ -9,6 +10,8 @@ import tailwindConfig from "@/tailwind.config";
 import tazreenWebsiteImage from "@/public/images/tazreenWebsite.png";
 import portfolioImage from "@/public/images/portfolio.png";
 import kanbanBoardImage from "@/public/images/kanbanBoard.png";
+import logoRejectionator from "@/public/images/logoRejectionator.png";
+import rejectionatorImage from "@/public/images/rejectionator.png";
 
 
 const fullConfig = resolveConfig(tailwindConfig);
@@ -41,8 +44,59 @@ export default function Projects() {
                     <div className="col-span-11 lg:col-span-6"></div>
                     <div className="col-span-11 lg:col-span-5"></div>
 
-                    {/* Tazreen's Website */}
+                    {/* Rejectionator */}
+                    <TimelineProject
+                        title="Rejectionator"
+                        timeframe="Aug 23 - Aug 23"
+                        logo={
+                            <AnimatedLogo 
+                                logo={(
+                                    <Image src={logoRejectionator} alt="Rejectionator Logo" height="30" width="30"/>
+                                )}
+                                description="Rejectionator Logo."
+                                className="opacity-0 font-bold text-3xl blur-sm"
+                                keyframes={
+                                    new Keyframes(
+                                        [
+                                            {
+                                                filter: "none",
+                                                opacity: 1,
+                                                easing: "ease-in-out"
+                                            }
+                                        ],
+                                        [
+                                            {
+                                                filter: "blur(4px)",
+                                                opacity: 0,
+                                                easing: "ease-in-out"
+                                            }
+                                        ]
+                                    )
+                                }
+                                keepStyles={
+                                    {
+                                        filter: "none",
+                                        opacity: 1
+                                    }
+                                }
+                            />
+                        }
+                        listContent={[
+                            "Website (SPA) that allows recruiters to send a large number of job application rejections in a simple form.",
+                            "Created for comedy purposes."
+                        ]}
+                        technologies={["Next.js", "React.js", "TypeScript", "Node.js", "SCSS", "Vercel"]}
+                        projectLinks={{
+                            site: "https://rejectionator.vercel.app",
+                            github: "https://github.com/RabbitSam/rejectionator"
+                        }}
+                        image={{
+                            link: rejectionatorImage,
+                            alt: "Rejectionator."
+                        }}
+                    />
 
+                    {/* Tazreen's Website */}
                     <TimelineProject
                         title="Tazreen Jahan Bari's Website (Client Project)"
                         timeframe="May 23 - Jul 23"
@@ -85,7 +139,7 @@ export default function Projects() {
                             "Website that allows the client to showcase their blogs, portfolios and work experience.",
                             "The client can create, edit or delete their blogs, academic/copy writing/journalistic/creative publications, research interests and work experience however they see fit."
                         ]}
-                        technologies={["Next.js", "TypeScript", "Mongoose (MongoDB)", "Vercel"]}
+                        technologies={["Next.js", "React.js", "TypeScript", "Node.js", "Mongoose (MongoDB)", "TailwindCSS", "Vercel"]}
                         projectLinks={{
                             site: "https://tazreenjahanbari.com"
                         }}
