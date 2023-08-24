@@ -189,7 +189,7 @@ export default function Projects() {
                             "Designed to have a 'retro-future-feel.'",
                             "You are viewing it right now! :)"
                         ]}
-                        technologies={["Next.js", "Tailwind CSS", "Vercel"]}
+                        technologies={["Next.js", "React.js", "Node.js", "Tailwind CSS", "Vercel"]}
                         projectLinks={{
                             github: "https://github.com/RabbitSam/portfolio",
                             site: "/"
@@ -245,7 +245,7 @@ export default function Projects() {
                             "Users can create, edit and delete the boards, columns in the boards, and tasks in the columns.",
                             <>Features drag and drop functionality thanks to <em>react-beautiful-dnd</em>.</>
                         ]}
-                        technologies={["MongoDB", "Express.js", "React.js", "Node.js", "Bootstrap 5", "AWS EC2"]}
+                        technologies={["MongoDB", "Express.js", "React.js", "Node.js", "Redux", "Bootstrap 5", "AWS EC2"]}
                         projectLinks={{
                             github: "https://github.com/RabbitSam/KanbanBoard",
                             site: "http://ec2-13-53-137-65.eu-north-1.compute.amazonaws.com/"
