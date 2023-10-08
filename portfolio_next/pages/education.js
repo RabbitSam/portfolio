@@ -38,10 +38,9 @@ export default function Education() {
                             <EducationTitle institutionTitle={"Monash University Malaysia, Malaysia"} degreeTitle={"Bachelor of Software Engineering (Honours)"} />
                         }
                         listContent={[
-                            "Graduated with First Class Honours.",
-                            "Graduated with a GPA of 3.625."
+                            "Graduated with First Class Honours and a GPA of 3.625 (out of 4).",
                         ]}
-                        timeline={"Jan 17 - Jan 21"}
+                        timeline={""}
                     />
                 </div>
             </Layout>

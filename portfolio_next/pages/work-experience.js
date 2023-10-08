@@ -38,10 +38,13 @@ export default function WorkExperience() {
                             <WorkTitle companyTitle={"Wunderman Thompson Studios, Bangladesh"} jobTitle={"Web Developer"} />
                         }
                         listContent={[
-                            "Created and deployed Landing Pages and EDM's (emails) for Microsoft."
+                            "Created and deployed 1000s of landing pages and EDMs for various Microsoft Events.",
+                            "Maintained a high KPI and periodically exceeded expectations.",
+                            "Completed tasks in a collaborative, agile environment with regular communications.",
+                            "Participated and presented in weekly training sessions meant to ensure everyone was on the same level.",
                         ]}
                         keyTechnologies={
-                            ["Vanilla JavaScript"]
+                            [" JavaScript", "CSS", "HTML."]
                         }
                         timeline={"Jan 22 - Mar 23"}
                     />
@@ -52,8 +55,9 @@ export default function WorkExperience() {
                             <WorkTitle companyTitle={"Configura, Malaysia"} jobTitle={"Application Developer Intern"} />
                         }
                         listContent={[
-                            "Created several gadgets/dashboard items for Jira to increase overall productivity of different teams within the company.",
-                            "Team of 2 developers and mentors"
+                            "Created and deployed several gadgets/dashboard items for Jira and increased overall productivity of teams within the company by 20%.",
+                            "Engaged in regular presentations and requirements gathering meetings with clients (who were internal team leads).",
+                            "Completed tasks in an agile environment using Scrum Methodology."
                         ]}
                         keyTechnologies={
                             ["JavaScript (with JQuery)", "Java"]

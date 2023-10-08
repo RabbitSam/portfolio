@@ -85,7 +85,7 @@ export default function Projects() {
                             "Website (SPA) that allows recruiters to send a large number of job application rejections in a simple form.",
                             "Created for comedy purposes."
                         ]}
-                        technologies={["Next.js", "React.js", "TypeScript", "Node.js", "SCSS", "Vercel"]}
+                        technologies={["Next.js", "React.js", "TypeScript", "Node.js", "SCSS", "Vercel", "Figma"]}
                         projectLinks={{
                             site: "https://rejectionator.vercel.app",
                             github: "https://github.com/RabbitSam/rejectionator"
@@ -137,9 +137,10 @@ export default function Projects() {
                         }
                         listContent={[
                             "Website that allows the client to showcase their blogs, portfolios and work experience.",
-                            "The client can create, edit or delete their blogs, academic/copy writing/journalistic/creative publications, research interests and work experience however they see fit."
+                            "The client can create, edit or delete their blogs, academic/copy writing/journalistic/creative publications, research interests and work experience however they see fit.",
+                            "Exceeded client expectations in regards to the results."
                         ]}
-                        technologies={["Next.js", "React.js", "TypeScript", "Node.js", "Mongoose (MongoDB)", "TailwindCSS", "Vercel"]}
+                        technologies={["Next.js", "React.js", "TypeScript", "Node.js", "Mongoose (MongoDB)", "TailwindCSS", "Vercel", "Figma"]}
                         projectLinks={{
                             site: "https://tazreenjahanbari.com"
                         }}
@@ -189,7 +190,7 @@ export default function Projects() {
                             "Designed to have a 'retro-future-feel.'",
                             "You are viewing it right now! :)"
                         ]}
-                        technologies={["Next.js", "React.js", "Node.js", "Tailwind CSS", "Vercel"]}
+                        technologies={["Next.js", "React.js", "Node.js", "Tailwind CSS", "Vercel", "Figma"]}
                         projectLinks={{
                             github: "https://github.com/RabbitSam/portfolio",
                             site: "/"
