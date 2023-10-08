@@ -8,6 +8,7 @@
     @apply opacity-0 blur-md;
     animation: animation-image-reveal 500ms ease-in-out;
     animation-fill-mode: forwards;
+    animation-delay: 250ms;
 }
 
 @keyframes animation-reveal {
