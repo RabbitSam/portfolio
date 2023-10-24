@@ -4,6 +4,32 @@ import AnimatedHeading from "@/components/AnimatedHeading";
 import CircleWithLine from "@/components/CircleWithLine";
 import DualTimelineItem from "@/components/DualTimelineItem";
 
+const workExperiences = [
+    {
+        companyTitle: "Wunderman Thompson Studios, Bangladesh",
+        jobTitle: "Web Developer",
+        listContent: [
+            "Created and deployed 1000s of landing pages and EDMs for various Microsoft Events.",
+            "Maintained a high KPI and periodically exceeded expectations.",
+            "Completed tasks in a collaborative, agile environment with regular communications.",
+            "Participated and presented in weekly training sessions meant to ensure everyone was on the same level.",
+        ],
+        keyTechnologies: ["JavaScript", "CSS", "HTML."],
+        timeline: "Jan 22 - Mar 23"
+    },
+    {
+        companyTitle: "Configura, Malaysia",
+        jobTitle: "Application Developer Intern",
+        listContent: [
+            "Created and deployed several gadgets/dashboard items for Jira and increased overall productivity of teams within the company by 20%.",
+            "Engaged in regular presentations and requirements gathering meetings with clients (who were internal team leads).",
+            "Completed tasks in an agile environment using Scrum Methodology."
+        ],
+        keyTechnologies: ["JavaScript (with JQuery)", "Java"],
+        timeline: "Jul 19 - Dec 19"
+    }
+];
+
 
 function WorkTitle({ companyTitle, jobTitle}) {
     return (
@@ -31,39 +57,20 @@ export default function WorkExperience() {
                             <CircleWithLine hideCircle={true}/>
                         </div>
                     </div>
-                    
-                    <DualTimelineItem
-                        position={"right"}
-                        title={
-                            <WorkTitle companyTitle={"Wunderman Thompson Studios, Bangladesh"} jobTitle={"Web Developer"} />
-                        }
-                        listContent={[
-                            "Created and deployed 1000s of landing pages and EDMs for various Microsoft Events.",
-                            "Maintained a high KPI and periodically exceeded expectations.",
-                            "Completed tasks in a collaborative, agile environment with regular communications.",
-                            "Participated and presented in weekly training sessions meant to ensure everyone was on the same level.",
-                        ]}
-                        keyTechnologies={
-                            [" JavaScript", "CSS", "HTML."]
-                        }
-                        timeline={"Jan 22 - Mar 23"}
-                    />
 
-                    <DualTimelineItem
-                        position={"left"}
-                        title={
-                            <WorkTitle companyTitle={"Configura, Malaysia"} jobTitle={"Application Developer Intern"} />
-                        }
-                        listContent={[
-                            "Created and deployed several gadgets/dashboard items for Jira and increased overall productivity of teams within the company by 20%.",
-                            "Engaged in regular presentations and requirements gathering meetings with clients (who were internal team leads).",
-                            "Completed tasks in an agile environment using Scrum Methodology."
-                        ]}
-                        keyTechnologies={
-                            ["JavaScript (with JQuery)", "Java"]
-                        }
-                        timeline={"Jul 19 - Dec 19"}
-                    />
+                    {
+                        workExperiences.map((item, indx) => (
+                            <DualTimelineItem
+                                position={indx % 2 === 0 ? "right" : "left"}
+                                title={
+                                    <WorkTitle companyTitle={item.companyTitle} jobTitle={item.jobTitle} />
+                                }
+                                listContent={item.listContent}
+                                keyTechnologies={item.keyTechnologies}
+                                timeline={item.timeline}
+                            />
+                        ))
+                    }
                 </div>
             </Layout>
         </>

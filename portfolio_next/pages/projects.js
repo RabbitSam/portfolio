@@ -24,6 +24,174 @@ class Keyframes {
     }
 }
 
+const defaultKeyframes = new Keyframes(
+    [
+        {
+            filter: "none",
+            opacity: 1,
+            easing: "ease-in-out"
+        }
+    ],
+    [
+        {
+            filter: "blur(4px)",
+            opacity: 0,
+            easing: "ease-in-out"
+        }
+    ]
+);
+
+const defaultKeepStyles = {
+    filter: "none",
+    opacity: 1
+}
+
+const projects = [
+    // Rejectionator
+    {
+        title: "Rejectionator",
+        timeframe: "Aug 23 - Aug 23",
+        logo: (
+            <AnimatedLogo 
+                logo={(
+                    <Image src={logoRejectionator} alt="Rejectionator Logo" height="30" width="30"/>
+                )}
+                description="Rejectionator Logo."
+                className="opacity-0 font-bold text-3xl blur-sm"
+                keyframes={defaultKeyframes}
+                keepStyles={defaultKeepStyles}
+            />
+        ),
+        listContent: [
+            "Website (SPA) that allows recruiters to send a large number of job application rejections in a simple form.",
+            "Created for comedy purposes."
+        ],
+        technologies: ["Next.js", "React.js", "TypeScript", "Node.js", "SCSS", "Vercel", "Figma"],
+        projectLinks: {
+            site: "https://rejectionator.vercel.app",
+            github: "https://github.com/RabbitSam/rejectionator"
+        },
+        image: {
+            link: rejectionatorImage,
+            alt: "Rejectionator Home Page Screenshot."
+        }
+    },
+    // Tazreen Website
+    {
+        title: "Tazreen Jahan Bari's Website (Client Project)",
+        timeframe: "May 23 - Jul 23",
+        logo: (
+            <AnimatedLogo 
+                logo={(
+                    <div className="bg-white px-2 pt-0.5 scale-95 text-[#884100] border-[#884100] font-tazreen">
+                        T
+                    </div>
+                )}
+                description="Tazreen Jahan Bari's Website's Logo."
+                className="opacity-0 font-bold text-3xl blur-sm"
+                keyframes={defaultKeyframes}
+                keepStyles={defaultKeepStyles}
+            />
+        ),
+        listContent: [
+            "Website that allows the client to showcase their blogs, portfolios and work experience.",
+            "The client can create, edit or delete their blogs, academic/copy writing/journalistic/creative publications, research interests and work experience however they see fit.",
+            "Exceeded client expectations in regards to the results."
+        ],
+        technologies: ["Next.js", "React.js", "TypeScript", "Node.js", "Mongoose (MongoDB)", "TailwindCSS", "Vercel", "Figma"],
+        projectLinks: {
+            site: "https://tazreenjahanbari.com"
+        },
+        image: {
+            link: tazreenWebsiteImage,
+            alt: "Tazreen Jahan Bari's Website."
+        }
+    },
+    // Portfolio site
+    {
+        title: "Portfolio Website",
+        timeframe: "Mar 23 - May 23",
+        logo: (
+            <AnimatedLogo 
+                logo="A"
+                description="Portfolio Website Logo."
+                className="opacity-0 font-bold text-3xl -translate-y-[3px]"
+                keyframes={
+                    new Keyframes(
+                        [
+                            {
+                                opacity: 1,
+                                textShadow: `3px 3px 0px ${fullConfig.theme.colors.primary.pink}, 6px 6px 0px ${fullConfig.theme.colors.primary.red}`,
+                                easing: "ease-in-out"
+                            }
+                        ],
+                        [
+                            {
+                                opacity: 0,
+                                textShadow: "none",
+                                easing: "ease-in-out"
+                            }
+                        ]
+                    )
+                }
+                keepStyles={
+                    {
+                        "text-shadow": `3px 3px 0px ${fullConfig.theme.colors.primary.pink}, 6px 6px 0px ${fullConfig.theme.colors.primary.red}`,
+                        opacity: 1
+                    }
+                }
+            />
+        ),
+        listContent: [
+            "Website that allows potential clients or recruiters to view my projects and work experience, download my resume, or contact me.",
+            "Designed to have a 'retro-future-feel.'",
+            "You are viewing it right now! :)"
+        ],
+        technologies: ["Next.js", "React.js", "Node.js", "Tailwind CSS", "Vercel", "Figma"],
+        projectLinks: {
+            github: "https://github.com/RabbitSam/portfolio",
+            site: "/"
+        },
+        image: {
+            link: portfolioImage,
+            alt: "Portfolio Website."
+        }
+    },
+    // Kanban Board
+    {
+        title: "Kanban Board",
+        timeframe: "Feb 23 - Mar 23",
+        logo: (
+            <AnimatedLogo 
+                logo={(
+                    <div className="bg-[#0d6efd] rounded-md pb-0.5 scale-95">
+                        <span className="left-0 top-0 ps-1.5">K</span>
+                        <span className="inline-block -translate-x-1.5">3</span>
+                    </div>
+                )}
+                description="Kanban Board Website Logo."
+                className="opacity-0 font-bold text-3xl blur-sm"
+                keyframes={defaultKeyframes}
+                keepStyles={defaultKeepStyles}
+            />
+        ),
+        listContent: [
+            "Web application that allows users to create their own Kanban Boards",
+            "Users can create, edit and delete the boards, columns in the boards, and tasks in the columns.",
+            <>Features drag and drop functionality thanks to <em>react-beautiful-dnd</em>.</>
+        ],
+        technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "Redux", "Bootstrap 5", "AWS EC2"],
+        projectLinks: {
+            github: "https://github.com/RabbitSam/KanbanBoard",
+            site: "http://ec2-13-53-137-65.eu-north-1.compute.amazonaws.com/"
+        },
+        image: {
+            link: kanbanBoardImage,
+            alt: "Kanban Board Website."
+        }
+    },
+];
+
 
 export default function Projects() {
 
@@ -44,218 +212,20 @@ export default function Projects() {
                     <div className="col-span-11 lg:col-span-6"></div>
                     <div className="col-span-11 lg:col-span-5"></div>
 
-                    {/* Rejectionator */}
-                    <TimelineProject
-                        title="Rejectionator"
-                        timeframe="Aug 23 - Aug 23"
-                        logo={
-                            <AnimatedLogo 
-                                logo={(
-                                    <Image src={logoRejectionator} alt="Rejectionator Logo" height="30" width="30"/>
-                                )}
-                                description="Rejectionator Logo."
-                                className="opacity-0 font-bold text-3xl blur-sm"
-                                keyframes={
-                                    new Keyframes(
-                                        [
-                                            {
-                                                filter: "none",
-                                                opacity: 1,
-                                                easing: "ease-in-out"
-                                            }
-                                        ],
-                                        [
-                                            {
-                                                filter: "blur(4px)",
-                                                opacity: 0,
-                                                easing: "ease-in-out"
-                                            }
-                                        ]
-                                    )
-                                }
-                                keepStyles={
-                                    {
-                                        filter: "none",
-                                        opacity: 1
-                                    }
-                                }
+                    {
+                        projects.map(item => (
+                            <TimelineProject
+                                title={item.title}
+                                timeframe={item.timeframe}
+                                logo={item.logo}
+                                listContent={item.listContent}
+                                technologies={item.technologies}
+                                projectLinks={item.projectLinks}
+                                image={item.image}
                             />
-                        }
-                        listContent={[
-                            "Website (SPA) that allows recruiters to send a large number of job application rejections in a simple form.",
-                            "Created for comedy purposes."
-                        ]}
-                        technologies={["Next.js", "React.js", "TypeScript", "Node.js", "SCSS", "Vercel", "Figma"]}
-                        projectLinks={{
-                            site: "https://rejectionator.vercel.app",
-                            github: "https://github.com/RabbitSam/rejectionator"
-                        }}
-                        image={{
-                            link: rejectionatorImage,
-                            alt: "Rejectionator."
-                        }}
-                    />
-
-                    {/* Tazreen's Website */}
-                    <TimelineProject
-                        title="Tazreen Jahan Bari's Website (Client Project)"
-                        timeframe="May 23 - Jul 23"
-                        logo={
-                            <AnimatedLogo 
-                                logo={(
-                                    <div className="bg-white px-2 pt-0.5 scale-95 text-[#884100] border-[#884100] font-tazreen">
-                                        T
-                                    </div>
-                                )}
-                                description="Tazreen Jahan Bari's Website's Logo."
-                                className="opacity-0 font-bold text-3xl blur-sm"
-                                keyframes={
-                                    new Keyframes(
-                                        [
-                                            {
-                                                filter: "none",
-                                                opacity: 1,
-                                                easing: "ease-in-out"
-                                            }
-                                        ],
-                                        [
-                                            {
-                                                filter: "blur(4px)",
-                                                opacity: 0,
-                                                easing: "ease-in-out"
-                                            }
-                                        ]
-                                    )
-                                }
-                                keepStyles={
-                                    {
-                                        filter: "none",
-                                        opacity: 1
-                                    }
-                                }
-                            />
-                        }
-                        listContent={[
-                            "Website that allows the client to showcase their blogs, portfolios and work experience.",
-                            "The client can create, edit or delete their blogs, academic/copy writing/journalistic/creative publications, research interests and work experience however they see fit.",
-                            "Exceeded client expectations in regards to the results."
-                        ]}
-                        technologies={["Next.js", "React.js", "TypeScript", "Node.js", "Mongoose (MongoDB)", "TailwindCSS", "Vercel", "Figma"]}
-                        projectLinks={{
-                            site: "https://tazreenjahanbari.com"
-                        }}
-                        image={{
-                            link: tazreenWebsiteImage,
-                            alt: "Tazreen Jahan Bari's Website."
-                        }}
-                    />
-
-                    {/* Portfolio Website */}
-                    <TimelineProject
-                        title="Portfolio Website"
-                        timeframe="Mar 23 - May 23"
-                        logo={
-                            <AnimatedLogo 
-                                logo="A"
-                                description="Portfolio Website Logo."
-                                className="opacity-0 font-bold text-3xl -translate-y-[3px]"
-                                keyframes={
-                                    new Keyframes(
-                                        [
-                                            {
-                                                opacity: 1,
-                                                textShadow: `3px 3px 0px ${fullConfig.theme.colors.primary.pink}, 6px 6px 0px ${fullConfig.theme.colors.primary.red}`,
-                                                easing: "ease-in-out"
-                                            }
-                                        ],
-                                        [
-                                            {
-                                                opacity: 0,
-                                                textShadow: "none",
-                                                easing: "ease-in-out"
-                                            }
-                                        ]
-                                    )
-                                }
-                                keepStyles={
-                                    {
-                                        "text-shadow": `3px 3px 0px ${fullConfig.theme.colors.primary.pink}, 6px 6px 0px ${fullConfig.theme.colors.primary.red}`,
-                                        opacity: 1
-                                    }
-                                }
-                            />
-                        }
-                        listContent={[
-                            "Website that allows potential clients or recruiters to view my projects and work experience, download my resume, or contact me.",
-                            "Designed to have a 'retro-future-feel.'",
-                            "You are viewing it right now! :)"
-                        ]}
-                        technologies={["Next.js", "React.js", "Node.js", "Tailwind CSS", "Vercel", "Figma"]}
-                        projectLinks={{
-                            github: "https://github.com/RabbitSam/portfolio",
-                            site: "/"
-                        }}
-                        image={{
-                            link: portfolioImage,
-                            alt: "Portfolio Website."
-                        }}
-                    />
-
-                    {/* Kanban Board Website */}
-                    <TimelineProject
-                        title="Kanban Board"
-                        timeframe="Feb 23 - Mar 23"
-                        logo={
-                            <AnimatedLogo 
-                                logo={(
-                                    <div className="bg-[#0d6efd] rounded-md pb-0.5 scale-95">
-                                        <span className="left-0 top-0 ps-1.5">K</span>
-                                        <span className="inline-block -translate-x-1.5">3</span>
-                                    </div>
-                                )}
-                                description="Kanban Board Website Logo."
-                                className="opacity-0 font-bold text-3xl blur-sm"
-                                keyframes={
-                                    new Keyframes(
-                                        [
-                                            {
-                                                filter: "none",
-                                                opacity: 1,
-                                                easing: "ease-in-out"
-                                            }
-                                        ],
-                                        [
-                                            {
-                                                filter: "blur(4px)",
-                                                opacity: 0,
-                                                easing: "ease-in-out"
-                                            }
-                                        ]
-                                    )
-                                }
-                                keepStyles={
-                                    {
-                                        filter: "none",
-                                        opacity: 1
-                                    }
-                                }
-                            />
-                        }
-                        listContent={[
-                            "Web application that allows users to create their own Kanban Boards",
-                            "Users can create, edit and delete the boards, columns in the boards, and tasks in the columns.",
-                            <>Features drag and drop functionality thanks to <em>react-beautiful-dnd</em>.</>
-                        ]}
-                        technologies={["MongoDB", "Express.js", "React.js", "Node.js", "Redux", "Bootstrap 5", "AWS EC2"]}
-                        projectLinks={{
-                            github: "https://github.com/RabbitSam/KanbanBoard",
-                            site: "http://ec2-13-53-137-65.eu-north-1.compute.amazonaws.com/"
-                        }}
-                        image={{
-                            link: kanbanBoardImage,
-                            alt: "Kanban Board Website."
-                        }}
-                    />
+                        ))
+                    }
+                    
                 </div>
             </Layout>
         </>
