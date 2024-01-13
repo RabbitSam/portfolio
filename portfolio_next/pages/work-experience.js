@@ -6,7 +6,7 @@ import DualTimelineItem from "@/components/DualTimelineItem";
 
 const workExperiences = [
     {
-        companyTitle: "Wunderman Thompson Studios, Bangladesh",
+        companyTitle: "VML (formerly Wunderman Thompson), Bangladesh",
         jobTitle: "Web Developer",
         listContent: [
             "Created and deployed 1000s of landing pages and EDMs for various Microsoft Events.",
