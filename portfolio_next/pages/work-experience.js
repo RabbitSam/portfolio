@@ -11,8 +11,8 @@ const workExperiences = [
         listContent: [
             "Created and deployed 1000s of landing pages and EDMs for various Microsoft Events.",
             "Maintained a high KPI and periodically exceeded expectations.",
-            "Completed tasks in a collaborative, agile environment with regular communications.",
-            "Participated and presented in weekly training sessions meant to ensure everyone was on the same level.",
+            "Maintained 100% resource utilization.",
+            "Worked in a 100% agile environment.",
         ],
         keyTechnologies: ["JavaScript", "CSS", "HTML."],
         timeline: "Jan 22 - Mar 23"
@@ -22,8 +22,8 @@ const workExperiences = [
         jobTitle: "Application Developer Intern",
         listContent: [
             "Created and deployed several gadgets/dashboard items for Jira and increased overall productivity of teams within the company by 20%.",
-            "Engaged in regular presentations and requirements gathering meetings with clients (who were internal team leads).",
-            "Completed tasks in an agile environment using Scrum Methodology."
+            "Worked in a 100% agile environment using Scrum methodology.",
+            "Engaged in regular presentations and meetings with clients."
         ],
         keyTechnologies: ["JavaScript (with JQuery)", "Java"],
         timeline: "Jul 19 - Dec 19"

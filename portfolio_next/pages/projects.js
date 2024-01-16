@@ -64,7 +64,8 @@ const projects = [
         ),
         listContent: [
             "Website (SPA) that allows recruiters to send a large number of job application rejections in a simple form.",
-            "Created for comedy purposes."
+            "Created for comedy effect.",
+            <>Designed, created and deployed in under <strong>2 days.</strong></>
         ],
         technologies: ["Next.js", "React.js", "TypeScript", "Node.js", "SCSS", "Vercel", "Figma"],
         projectLinks: {
@@ -94,9 +95,8 @@ const projects = [
             />
         ),
         listContent: [
-            "Website that allows the client to showcase their blogs, portfolios and work experience.",
-            "The client can create, edit or delete their blogs, academic/copy writing/journalistic/creative publications, research interests and work experience however they see fit.",
-            "Exceeded client expectations in regards to the results."
+            "Complete Content Management System that allows the client to showcase their blogs, portfolios and work experience.",
+            "Achieved 100% client satisfaction."
         ],
         technologies: ["Next.js", "React.js", "TypeScript", "Node.js", "Mongoose (MongoDB)", "TailwindCSS", "Vercel", "Figma"],
         projectLinks: {
@@ -143,8 +143,8 @@ const projects = [
             />
         ),
         listContent: [
-            "Website that allows potential clients or recruiters to view my projects and work experience, download my resume, or contact me.",
-            "Designed to have a 'retro-future-feel.'",
+            "Website that allows potential clients or recruiters to view my portfolio and contact me.",
+            "Mastered Next.js, TailwindCSS and Vercel deployments through the project.",
             "You are viewing it right now! :)"
         ],
         technologies: ["Next.js", "React.js", "Node.js", "Tailwind CSS", "Vercel", "Figma"],
@@ -176,8 +176,8 @@ const projects = [
             />
         ),
         listContent: [
-            "Web application that allows users to create their own Kanban Boards",
-            "Users can create, edit and delete the boards, columns in the boards, and tasks in the columns.",
+            "Simplistic Kanban Board Website.",
+            "Mastered the MERN stack through the project.",
             <>Features drag and drop functionality thanks to <em>react-beautiful-dnd</em>.</>
         ],
         technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "Redux", "Bootstrap 5", "AWS EC2"],
