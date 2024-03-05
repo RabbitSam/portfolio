@@ -72,7 +72,7 @@ export default function Contact() {
                             </Button>
 
                             <Button textSize="base">
-                                <a href="https://www.linkedin.com/in/sheikh-aquib-mahmood-0068431b0/" className="flex flex-row justify-center items-center gap-x-1 p-1">
+                                <a href="https://www.linkedin.com/in/sheikh-aquib-mahmood/" className="flex flex-row justify-center items-center gap-x-1 p-1">
                                     <FontAwesomeIcon icon={faLinkedin} className="h-5"/>
                                     LinkedIn
                                 </a>

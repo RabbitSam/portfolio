@@ -17,7 +17,7 @@ export default function Footer() {
                                 <FontAwesomeIcon icon={faGithub} className='h-4' />
                                 GitHub
                             </BoxLink>
-                            <BoxLink href="https://www.linkedin.com/in/sheikh-aquib-mahmood-0068431b0/">
+                            <BoxLink href="https://www.linkedin.com/in/sheikh-aquib-mahmood/">
                                 <FontAwesomeIcon icon={faLinkedin} className='h-4'/>
                                 LinkedIn
                             </BoxLink>
