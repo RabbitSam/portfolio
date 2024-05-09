@@ -46,18 +46,22 @@ export default function TimelineProject({ title, timeframe, logo, listContent, t
                 <div className="mt-4">
                     <AnimatedUnorderedList content={listContent}/>
                 </div>
-                <div className="mt-4 flex gap-x-2 flex-wrap">
-                    <HorizontalAnimatedText direction={animationDirection} duration={animationDuration} delay={0}>
-                        <strong>Key technologies:</strong>
-                    </HorizontalAnimatedText>
-                    {
-                        technologies.map((technology, idx) => (
-                            <HorizontalAnimatedText key={idx} direction={animationDirection} duration={animationDuration} delay={technologyAnimationDelay * (idx + 1)}>
-                                <em>{technology}{idx === technologies.length - 1 ? "." : ","}</em>
-                            </HorizontalAnimatedText>
-                        ))
-                    }
-                </div>
+                {
+                    technologies && technologies.length &&
+                    <div className="mt-4 flex gap-x-2 flex-wrap">
+                        <HorizontalAnimatedText direction={animationDirection} duration={animationDuration} delay={0}>
+                            <strong>Key technologies:</strong>
+                        </HorizontalAnimatedText>
+                        {
+                            technologies && technologies.length &&
+                            technologies.map((technology, idx) => (
+                                <HorizontalAnimatedText key={idx} direction={animationDirection} duration={animationDuration} delay={technologyAnimationDelay * (idx + 1)}>
+                                    <em>{technology}{idx === technologies.length - 1 ? "." : ","}</em>
+                                </HorizontalAnimatedText>
+                            ))
+                        }
+                    </div>
+                }
                 <small className="mt-4 flex gap-x-2 mb-16">
                     {
                         !!projectLinks.github &&

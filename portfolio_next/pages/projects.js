@@ -7,7 +7,6 @@ import AnimatedLogo from "@/components/AnimatedLogo";
 import AnimatedHeading from "@/components/AnimatedHeading";
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "@/tailwind.config";
-import tazreenWebsiteImage from "@/public/images/tazreenWebsite.png";
 import portfolioImage from "@/public/images/portfolio.png";
 import kanbanBoardImage from "@/public/images/kanbanBoard.png";
 import logoRejectionator from "@/public/images/logoRejectionator.png";
@@ -63,11 +62,13 @@ const projects = [
             />
         ),
         listContent: [
-            "Website (SPA) that allows recruiters to send a large number of job application rejections in a simple form.",
-            "Created for comedy effect.",
-            <>Designed, created and deployed in under <strong>2 days.</strong></>
+            "Responsive single page web application designed using Next.js, React.js, TypeScript, SCSS and Node.js.",
+            "Ensured top-tier accessibility using semantic HTML5 and ARIA, and following up-to-date web accessibility guidelines.",
+            "Designed using Figma and hosted on Vercel.",
+            "Used Next.js app router for routing and API development.",
+            "Created reusable and maintainable functional components using React.js, semantic HTML5, CSS modules, and TypeScript.",
+            "Used Github and Git CLI for version control.",
         ],
-        technologies: ["Next.js", "React.js", "TypeScript", "Node.js", "SCSS", "Vercel", "Figma"],
         projectLinks: {
             site: "https://rejectionator.vercel.app",
             github: "https://github.com/RabbitSam/rejectionator"
@@ -75,36 +76,6 @@ const projects = [
         image: {
             link: rejectionatorImage,
             alt: "Rejectionator Home Page Screenshot."
-        }
-    },
-    // Tazreen Website
-    {
-        title: "Tazreen Jahan Bari's Website (Client Project)",
-        timeframe: "May 23 - Jul 23",
-        logo: (
-            <AnimatedLogo 
-                logo={(
-                    <div className="bg-white px-2 pt-0.5 scale-95 text-[#884100] border-[#884100] font-tazreen">
-                        T
-                    </div>
-                )}
-                description="Tazreen Jahan Bari's Website's Logo."
-                className="opacity-0 font-bold text-3xl blur-sm"
-                keyframes={defaultKeyframes}
-                keepStyles={defaultKeepStyles}
-            />
-        ),
-        listContent: [
-            "Complete Content Management System that allows the client to showcase their blogs, portfolios and work experience.",
-            "Achieved 100% client satisfaction."
-        ],
-        technologies: ["Next.js", "React.js", "TypeScript", "Node.js", "Mongoose (MongoDB)", "TailwindCSS", "Vercel", "Figma"],
-        projectLinks: {
-            site: "https://tazreenjahanbari.com"
-        },
-        image: {
-            link: tazreenWebsiteImage,
-            alt: "Tazreen Jahan Bari's Website."
         }
     },
     // Portfolio site
@@ -143,11 +114,16 @@ const projects = [
             />
         ),
         listContent: [
-            "Website that allows potential clients or recruiters to view my portfolio and contact me.",
-            "Mastered Next.js, TailwindCSS and Vercel deployments through the project.",
+            "Responsive portfolio website developed using Next.js, React.js, Node.js, and Vercel.",
+            "Created reusable and maintainable functional components using React.js, JavaScript (ES6), semantic HTML5, and TailwindCSS.",
+            "Ensured top-tier accessibility using semantic HTML5 and ARIA, and following up-to-date web accessibility guidelines.",
+            "Implemented custom animations using CSS modules, TailwindCSS, and React.js hooks.",
+            "Designed with responsive design principles using Figma.",
+            "Hosted using Vercel.",
+            "Used Next.js pages router for routing purposes.",
+            "Used Github and Git CLI for version control.",
             "You are viewing it right now! :)"
         ],
-        technologies: ["Next.js", "React.js", "Node.js", "Tailwind CSS", "Vercel", "Figma"],
         projectLinks: {
             github: "https://github.com/RabbitSam/portfolio",
             site: "/"
@@ -176,11 +152,13 @@ const projects = [
             />
         ),
         listContent: [
-            "Simplistic Kanban Board Website.",
-            "Mastered the MERN stack through the project.",
-            <>Features drag and drop functionality thanks to <em>react-beautiful-dnd</em>.</>
+            "Responsive kanban board website developed using the MERN stack (MongoDB, Express.js, Node.js, React.js), Redux, and Bootstrap 5.",
+            "Hosted on AWS EC2.",
+            "Created APIs following the REST protocol using Express.js.",
+            "Interfaced with MongoDB using Mongoose ODM.",
+            "Used remix-router for routing purposes.",
+            "Used Github and Git CLI for version control.",
         ],
-        technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "Redux", "Bootstrap 5", "AWS EC2"],
         projectLinks: {
             github: "https://github.com/RabbitSam/KanbanBoard",
             site: "http://ec2-13-53-137-65.eu-north-1.compute.amazonaws.com/"
