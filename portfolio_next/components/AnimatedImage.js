@@ -21,15 +21,11 @@ export default function AnimatedImageV2({src, alt, className}) {
 
             if (isSufficientlyIntersecting) {
                 // Animate to reveal
-                if (targetRef.current) {
-                    setVisible(true);
-                }
+                setVisible(true);
 
             } else if (isContentBelow) {
                 // Animate to hide
-                if (targetRef.current) {
-                    setVisible(false);
-                }
+                setVisible(false);
             } else if (isContentAbove) {
                 // Set to revealed
                 setVisible(true);

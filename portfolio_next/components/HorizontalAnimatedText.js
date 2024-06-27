@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 export default function HorizontalAnimatedTextV2({ children, direction }) {
     const [visible, setVisible] = useState(false);
     const targetRef = useRef(null);
-    const textRef = useRef(null);
 
     const translateClasses = {
         "left": "-translate-x-[110vw]",
@@ -25,15 +24,10 @@ export default function HorizontalAnimatedTextV2({ children, direction }) {
 
             if (isFullyIntersecting) {
                 // Animate to reveal
-                if (textRef.current && targetRef.current) {
-                    setVisible(true);
-                }
-
+                setVisible(true);
             } else if (isContentBelow) {
                 // Animate to hide
-                if (textRef.current && targetRef.current) {
-                    setVisible(false);
-                }
+                setVisible(false);
             } else if (isContentAbove) {
                 setVisible(true);
             }
@@ -51,7 +45,7 @@ export default function HorizontalAnimatedTextV2({ children, direction }) {
 
     return (
         <div className="relative">
-            <div ref={textRef} className={`${visible ? "" : `${translateClasses[direction]} blur-sm`} transition-all`}>{children}</div>
+            <div className={`${visible ? "" : `${translateClasses[direction]} blur-sm`} transition-all`}>{children}</div>
             {/* This second one helps to trigger the animation */}
             <div ref={targetRef} aria-hidden="true" className="opacity-0 select-none -z-50 absolute top-0 left-0">{children}</div>
         </div>
