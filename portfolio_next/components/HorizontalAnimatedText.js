@@ -25,7 +25,7 @@ export default function HorizontalAnimatedTextV2({ children, direction }) {
 
             if (isFullyIntersecting) {
                 // Animate to reveal
-                if (textRef.current && targetRef.current && targetRef.current.dataset.revealed !== "true") {
+                if (textRef.current && targetRef.current) {
                     setVisible(true);
                 }
 
@@ -51,9 +51,9 @@ export default function HorizontalAnimatedTextV2({ children, direction }) {
 
     return (
         <div className="relative">
-            <div ref={textRef} className={`${visible ? "" : `${translateClasses[direction]} blur-sm`} transition-all `}>{children}</div>
+            <div ref={textRef} className={`${visible ? "" : `${translateClasses[direction]} blur-sm`} transition-all`}>{children}</div>
             {/* This second one helps to trigger the animation */}
-            <div ref={targetRef} data-revealed="false" aria-hidden="true" className="opacity-0 select-none -z-50 absolute top-0 left-0">{children}</div>
+            <div ref={targetRef} aria-hidden="true" className="opacity-0 select-none -z-50 absolute top-0 left-0">{children}</div>
         </div>
     );
 }
