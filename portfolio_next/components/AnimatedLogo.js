@@ -1,12 +1,15 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react";
 
 
-export default function AnimatedLogo({logo, description, className, keyframes, keepStyles}) {
+const DEFAULT_HIDDEN_CLASS_NAME = "opacity-0 blur-sm";
+const DEFAULT_VISIBLE_CLASS_NAME = "opacity-1 blur-none";
+
+
+export default function AnimatedLogoV2({logo, description, className="", hiddenClassName=DEFAULT_HIDDEN_CLASS_NAME, visibleClassName=DEFAULT_VISIBLE_CLASS_NAME}) {
+    const [visible, setVisible] = useState(false);
+
     const targetRef = useRef(null);
     const logoRef = useRef(null);
-
-    const animationFill = "forwards";
-    const animationDuration = 500;
 
     useEffect(() => {
         const options = {
@@ -22,22 +25,13 @@ export default function AnimatedLogo({logo, description, className, keyframes, k
 
             if (isFullyIntersecting) {
                 // Animate to revealed
-                if (logoRef.current && targetRef.current && targetRef.current.dataset.revealed !== "true") {
-                    logoRef.current.animate(keyframes.reveal, {fill: animationFill, duration: animationDuration});
-                    targetRef.current.dataset.revealed = "true";
-                }
+                setVisible(true);
             } else if (isContentBelow) {
                 // Animate to hidden
-                if (logoRef.current && targetRef.current) {
-                    logoRef.current.animate(keyframes.hide, {fill: animationFill, duration: animationDuration});
-                    targetRef.current.dataset.revealed = "false";
-                }
+                setVisible(false);
             } else if (isContentAbove) {
                 // Set to revealed
-                if (logoRef.current && targetRef.current) {
-                    Object.assign(logoRef.current.style, keepStyles);
-                    targetRef.current.dataset.revealed = "true";
-                }
+                setVisible(true);
             }
         };
 
@@ -46,14 +40,18 @@ export default function AnimatedLogo({logo, description, className, keyframes, k
             observer.observe(targetRef.current);
         }
 
+        return () => {
+            observer.disconnect();
+        };
+
     }, []);
 
     return (
         <div className="relative select-none" role="img" aria-label={description} >
-            <div ref={logoRef} className={className}>
+            <div ref={logoRef} className={`${className} transition-all duration-500 ease-in-out ${visible ? visibleClassName : hiddenClassName}`}>
                 {logo}
             </div>
-            <div ref={targetRef} data-revealed="false" aria-hidden="true" className={`${className} opacity-0 absolute left-0 top-0`}>
+            <div ref={targetRef} aria-hidden="true" className={`${className} opacity-0 absolute left-0 top-0`}>
                 Reference
             </div>
         </div>  
