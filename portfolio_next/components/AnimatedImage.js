@@ -44,6 +44,6 @@ export default function AnimatedImageV2({src, alt, className}) {
 
 
     return (
-        <Image ref={targetRef} src={src} alt={alt} className={`${className} opacity-0 rounded-md transition-all duration-500 ${visible ? `!opacity-100 -translate-x-[6px] -translate-y-[6px] shadow-image` : ""}`}/>
+        <Image ref={targetRef} src={src} alt={alt} className={`${className} opacity-0 rounded-md transition-all duration-500 ease-in-out ${visible ? `!opacity-100 -translate-x-[6px] -translate-y-[6px] shadow-image` : ""}`}/>
     )
 }

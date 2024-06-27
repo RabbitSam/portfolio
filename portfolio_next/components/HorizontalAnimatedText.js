@@ -45,7 +45,7 @@ export default function HorizontalAnimatedTextV2({ children, direction }) {
 
     return (
         <div className="relative">
-            <div className={`${visible ? "" : `${translateClasses[direction]} blur-sm`} transition-all`}>{children}</div>
+            <div className={`${visible ? "" : `${translateClasses[direction]} blur-sm`} transition-all ease-in-out`}>{children}</div>
             {/* This second one helps to trigger the animation */}
             <div ref={targetRef} aria-hidden="true" className="opacity-0 select-none -z-50 absolute top-0 left-0">{children}</div>
         </div>
