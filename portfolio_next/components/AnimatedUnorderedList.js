@@ -17,16 +17,12 @@ function AnimatedListItemV2({ children }) {
             const isContentBelow = entry.boundingClientRect.top > 0;
             const isContentAbove = entry.boundingClientRect.top < 0;
 
-            if (isFullyIntersecting) {
+            if (isFullyIntersecting || isContentAbove) {
                 setVisible(true);
             } else if (isContentBelow) {
                 // Animate to hide
                 setVisible(false);
 
-            } else if (isContentAbove) {
-                // Keep revealed
-                setVisible(true);
-                
             }
         };
 

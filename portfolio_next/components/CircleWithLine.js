@@ -20,15 +20,12 @@ export default function CircleWithLineV2({hideCircle}) {
             const isContentBelow = entry.boundingClientRect.top > 0;
             const isContentAbove = entry.boundingClientRect.top < 0;
 
-            if (isFullyIntersecting) {
+            if (isFullyIntersecting || isContentAbove) {
                 // Animate to reveal
                 setVisible(true);
             } else if (isContentBelow) {
                 // Animate to hidden
                 setVisible(false);
-            } else if (isContentAbove) {
-                // Set to revealed
-                setVisible(true);
             }
 
             setFirstTime(false);

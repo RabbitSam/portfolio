@@ -3,18 +3,10 @@ import { useEffect, useRef, useState } from "react";
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "@/tailwind.config";
 
-const fullConfig = resolveConfig(tailwindConfig);
 
-
-export default function DualTimelineItem({ position, title, timeline, listContent, keyTechnologies }) {
+export default function DualTimelineItemV2({ position, title, timeline, listContent, keyTechnologies }) {
+    const [visible, setVisible] = useState(false);
     const targetRef = useRef(null);
-    const contentRef = useRef(null);
-
-    const animationOptions = {
-        fill: "forwards",
-        duration: 300,
-        delay: 50
-    };
 
     const positionMap = {
         keyframes: {
@@ -65,45 +57,12 @@ export default function DualTimelineItem({ position, title, timeline, listConten
             const isContentBelow = entry.boundingClientRect.top > 0;
             const isContentAbove = entry.boundingClientRect.top < 0;
 
-            if (isSufficientlyIntersecting) {
-                // Animate to reveal
-                if (targetRef.current && contentRef.current && targetRef.current.dataset.revealed !== "true") {
-                    const keyframes = [
-                        {
-                            transform: "translate(0%)",
-                            opacity: 1,
-                            easing: "ease-in-out"
-                        }
-                    ];
-
-                    contentRef.current.animate(keyframes, animationOptions);
-                    targetRef.current.dataset.revealed = "true";
-                }
+            if (isSufficientlyIntersecting || isContentAbove) {
+                setVisible(true);
 
             } else if (isContentBelow) {
                 // Animate to hide
-                if (targetRef.current && contentRef.current) {
-                    const matchesLg = window.matchMedia(`(min-width: ${fullConfig.theme.screens.lg})`).matches;
-
-                    const keyframes = [
-                        {
-                            opacity: 0,
-                            transform: `translate(${matchesLg ? positionMap.keyframes[position] : positionMap.keyframes.right})`,
-                            easing: "ease-in-out"
-                        }
-                    ];
-
-                    contentRef.current.animate(keyframes, animationOptions);
-                    targetRef.current.dataset.revealed = "false";
-                }
-            } else if (isContentAbove) {
-                // Set to revealed
-                if (targetRef.current && contentRef.current) {
-                    contentRef.current.style.opacity = "1";
-                    contentRef.current.style.transform = "translate(0%)";
-
-                    targetRef.current.dataset.revealed = "true";
-                }
+                setVisible(false);
             }
         });
 
@@ -111,6 +70,10 @@ export default function DualTimelineItem({ position, title, timeline, listConten
         if (targetRef.current) {
             observer.observe(targetRef.current);
         }
+
+        return () => {
+            observer.disconnect();
+        };
 
     }, []);
 
@@ -120,10 +83,10 @@ export default function DualTimelineItem({ position, title, timeline, listConten
                 <div className={`col-span-2 sm:col-span-1 -mb-4 flex lg:col-start-6 lg:items-center lg:justify-center ${positionMap.order[position].circle}`} >
                     <CircleWithLine />
                 </div>
-                <div ref={contentRef} className={`opacity-0 -translate-x-1.5 ${positionMap.className[position]} col-span-10 flex flex-row sm:col-span-11 lg:col-span-5 ${positionMap.order[position].content}`}>
+                <div className={`col-span-10 flex flex-row sm:col-span-11 lg:col-span-5 transition-all ease-in-out delay-[50ms] duration-500 ${visible ? "" : `opacity-0 ${positionMap.order[position].content} ${positionMap.className[position]} sm:-translate-x-1.5`}`}>
                     <div className={`border-[20px] border-y-transparent border-s-transparent lg: bg-transparent border-white w-0 h-0 -translate-x-6 -translate-y-1.5 z-10 ${positionMap.leftTriangle[position]}`}></div>
                     <div className={`border-2 w-full -translate-x-6 ${positionMap.translate[position]} -translate-y-10 p-3 rounded-lg shadow-image bg-slate-950 bg-opacity-60 ${positionMap.shadow[position]}`}>
-                        <h2 ref={targetRef} data-revealed="false" className="text-xl sm:text-2xl sm:self-center mb-2">
+                        <h2 ref={targetRef} className="text-xl sm:text-2xl sm:self-center mb-2">
                             {title}
                         </h2>
                         <h3 className="font-semibold text-slate-400 contrast-more:text-white text-sm mix-blend-screen">

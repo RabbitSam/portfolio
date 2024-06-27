@@ -22,14 +22,12 @@ export default function HorizontalAnimatedTextV2({ children, direction }) {
             const isContentBelow = entry.boundingClientRect.top > 0;
             const isContentAbove = entry.boundingClientRect.top < 0;
 
-            if (isFullyIntersecting) {
+            if (isFullyIntersecting || isContentAbove) {
                 // Animate to reveal
                 setVisible(true);
             } else if (isContentBelow) {
                 // Animate to hide
                 setVisible(false);
-            } else if (isContentAbove) {
-                setVisible(true);
             }
         });
 

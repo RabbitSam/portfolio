@@ -23,15 +23,12 @@ export default function AnimatedLogoV2({logo, description, className="", hiddenC
             const isContentBelow = entry.boundingClientRect.top > 0;
             const isContentAbove = entry.boundingClientRect.top < 0;
 
-            if (isFullyIntersecting) {
+            if (isFullyIntersecting || isContentAbove) {
                 // Animate to revealed
                 setVisible(true);
             } else if (isContentBelow) {
                 // Animate to hidden
                 setVisible(false);
-            } else if (isContentAbove) {
-                // Set to revealed
-                setVisible(true);
             }
         };
 
