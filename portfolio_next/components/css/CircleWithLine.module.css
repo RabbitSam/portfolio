@@ -1,0 +1,76 @@
+.circle {
+    @apply relative w-fit scale-0;
+}
+
+.circleVisible {
+    @apply scale-0;
+    animation: circleReveal ease-in-out 500ms forwards;
+}
+
+.circleHidden {
+    @apply scale-100;
+    animation: circleHide ease-in-out 500ms forwards 500ms;
+}
+
+.line {
+    @apply absolute top-7 left-[0.6rem] -z-20 bg-[length:100%_300%] w-2 h-full bg-gradient-to-b from-primary-pink via-primary-red via-25% to-transparent to-50% bg-bottom blur-[1px] rounded-md;
+}
+
+.lineVisible {
+    @apply bg-bottom;
+    animation: lineReveal ease-in-out 500ms forwards;
+}
+
+.lineHidden {
+    @apply bg-top;
+    animation: lineHide ease-in-out 500ms forwards;
+}
+
+.animationDelay {
+    animation-delay: 500ms;
+}
+
+@keyframes circleHide {
+    0% {
+        @apply scale-100;
+    }
+    20% {
+        @apply scale-125;
+    }
+    100% {
+        @apply scale-0;
+    }
+}
+
+@keyframes lineHide {
+    0% {
+        @apply bg-top;
+    }
+    100% {
+        @apply bg-bottom;
+    }
+}
+
+@keyframes circleReveal {
+    0% {
+        @apply scale-0;
+    }
+    60% {
+        @apply scale-125;
+    }
+    80% {
+        @apply scale-75;
+    }
+    100% {
+        @apply scale-100;
+    }
+}
+
+@keyframes lineReveal {
+    0% {
+        @apply bg-bottom;
+    }
+    100% {
+        @apply bg-top;
+    }
+}
