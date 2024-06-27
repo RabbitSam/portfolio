@@ -37,7 +37,7 @@ export default function HorizontalAnimatedTextV2({ children, direction }) {
         observer.observe(targetRef.current);
 
         return () => {
-            observer.unobserve(targetRef.current);
+            observer.disconnect();
         };
 
     }, []);

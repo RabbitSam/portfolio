@@ -38,7 +38,7 @@ export default function AnimatedImageV2({src, alt, className}) {
         }
 
         return () => {
-            observer.unobserve(targetRef.current);
+            observer.disconnect();
         };
     }, []);
 

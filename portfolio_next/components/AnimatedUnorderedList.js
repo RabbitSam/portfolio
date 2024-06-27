@@ -36,7 +36,7 @@ function AnimatedListItemV2({ children }) {
         }
 
         return () => {
-            observer.unobserve(targetRef.current);
+            observer.disconnect();
         };
 
     }, []);

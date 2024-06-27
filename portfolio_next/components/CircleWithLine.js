@@ -35,7 +35,13 @@ export default function CircleWithLineV2({hideCircle}) {
         };
 
         const observer = new IntersectionObserver(reveal, options);
-        observer.observe(observeTargetRef.current);
+        if (observeTargetRef.current) {
+            observer.observe(observeTargetRef.current);
+        }
+
+        return () => {
+            observer.disconnect();
+        };
 
     }, []);
 
