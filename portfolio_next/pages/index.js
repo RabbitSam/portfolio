@@ -31,7 +31,7 @@ export default function Home() {
 						<div className='flex flex-wrap gap-2 text-sm w-full'>
 							{
 								skills.map((skill) => (
-									<div className='border border-2 border-slate-600 text-white lg:text-slate-100 bg-slate-950 bg-opacity-50 px-2 py-1 rounded-md hover:border-slate-500 hover:text-white'>
+									<div className='border border-2 border-slate-600 text-white lg:text-slate-100 bg-slate-950 bg-opacity-50 px-2 py-1 rounded-md hover:border-slate-500 hover:text-white' key={skill}>
 										{skill}
 									</div>
 								))

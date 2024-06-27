@@ -11,6 +11,8 @@ import portfolioImage from "@/public/images/portfolio.png";
 import kanbanBoardImage from "@/public/images/kanbanBoard.png";
 import logoRejectionator from "@/public/images/logoRejectionator.png";
 import rejectionatorImage from "@/public/images/rejectionator.png";
+import logoPompom from "@/public/images/logoPompom.png";
+import pompomImage from "@/public/images/pompom.png";
 
 
 const fullConfig = resolveConfig(tailwindConfig);
@@ -46,6 +48,39 @@ const defaultKeepStyles = {
 }
 
 const projects = [
+    {
+        title: "Pompom",
+        timeframe: "Jun 24",
+        logo: (
+            <AnimatedLogo
+                logo={(
+                    <Image src={logoPompom} alt="Pompom Logo." height="30" width="30" />
+                )}
+                description={"Pompom Logo."}
+                className="opacity-0 font-bold text-3xl blur-sm"
+                keyframes={defaultKeyframes}
+                keepStyles={defaultKeepStyles}
+            />
+        ),
+        listContent: [
+            "Responsive desktop application designed using React.js, TypeScript, SCSS, Node.js, and Electron",
+            "Ensured top-tier accessibility using HTML5, ARIA and the visually-hidden class.",
+            "Followed up-to-date web accessibility guidelines.",
+            "Designed using Figma.",
+            "Used react-router for routing purposes.",
+            "Created reusable and maintainable functional components using React.js, semantic HTML5, SCSS modules, and TypeScript.",
+            "Used redux to maintain app state globally where necessary.",
+            "Used the fs module to keep records of projects and tasks."
+        ],
+        projectLinks: {
+            site: "https://github.com/RabbitSam/pompom/releases/tag/release",
+            github: "https://github.com/RabbitSam/pompom"
+        },
+        image: {
+            link: pompomImage,
+            alt: "Pompom home page screenshot."
+        }
+    },
     // Rejectionator
     {
         title: "Rejectionator",
