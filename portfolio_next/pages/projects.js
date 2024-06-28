@@ -5,8 +5,6 @@ import CircleWithLine from "@/components/CircleWithLine";
 import TimelineProject from "@/components/TimelineProject";
 import AnimatedLogo from "@/components/AnimatedLogo";
 import AnimatedHeading from "@/components/AnimatedHeading";
-import resolveConfig from "tailwindcss/resolveConfig";
-import tailwindConfig from "@/tailwind.config";
 import portfolioImage from "@/public/images/portfolio.png";
 import kanbanBoardImage from "@/public/images/kanbanBoard.png";
 import logoRejectionator from "@/public/images/logoRejectionator.png";
@@ -14,38 +12,6 @@ import rejectionatorImage from "@/public/images/rejectionator.png";
 import logoPompom from "@/public/images/logoPompom.png";
 import pompomImage from "@/public/images/pompom.png";
 
-
-const fullConfig = resolveConfig(tailwindConfig);
-
-
-class Keyframes {
-    constructor(reveal, hide) {
-        this.reveal = reveal;
-        this.hide = hide;
-    }
-}
-
-const defaultKeyframes = new Keyframes(
-    [
-        {
-            filter: "none",
-            opacity: 1,
-            easing: "ease-in-out"
-        }
-    ],
-    [
-        {
-            filter: "blur(4px)",
-            opacity: 0,
-            easing: "ease-in-out"
-        }
-    ]
-);
-
-const defaultKeepStyles = {
-    filter: "none",
-    opacity: 1
-}
 
 const projects = [
     {
@@ -57,9 +23,6 @@ const projects = [
                     <Image src={logoPompom} alt="Pompom Logo." height="30" width="30" />
                 )}
                 description={"Pompom Logo."}
-                className="opacity-0 font-bold text-3xl blur-sm"
-                keyframes={defaultKeyframes}
-                keepStyles={defaultKeepStyles}
             />
         ),
         listContent: [
@@ -91,9 +54,6 @@ const projects = [
                     <Image src={logoRejectionator} alt="Rejectionator Logo" height="30" width="30"/>
                 )}
                 description="Rejectionator Logo."
-                className="opacity-0 font-bold text-3xl blur-sm"
-                keyframes={defaultKeyframes}
-                keepStyles={defaultKeepStyles}
             />
         ),
         listContent: [
@@ -121,31 +81,9 @@ const projects = [
             <AnimatedLogo 
                 logo="A"
                 description="Portfolio Website Logo."
-                className="opacity-0 font-bold text-3xl -translate-y-[3px]"
-                keyframes={
-                    new Keyframes(
-                        [
-                            {
-                                opacity: 1,
-                                textShadow: `3px 3px 0px ${fullConfig.theme.colors.primary.pink}, 6px 6px 0px ${fullConfig.theme.colors.primary.red}`,
-                                easing: "ease-in-out"
-                            }
-                        ],
-                        [
-                            {
-                                opacity: 0,
-                                textShadow: "none",
-                                easing: "ease-in-out"
-                            }
-                        ]
-                    )
-                }
-                keepStyles={
-                    {
-                        "text-shadow": `3px 3px 0px ${fullConfig.theme.colors.primary.pink}, 6px 6px 0px ${fullConfig.theme.colors.primary.red}`,
-                        opacity: 1
-                    }
-                }
+                className="font-bold text-3xl"
+                hiddenClassName="opacity-0 -translate-y-[3px]"
+                visibleClassName="opacity-100 [text-shadow:_3px_3px_0px_theme(colors.primary.pink),_6px_6px_0px_theme(colors.primary.red)]"
             />
         ),
         listContent: [
@@ -181,9 +119,7 @@ const projects = [
                     </div>
                 )}
                 description="Kanban Board Website Logo."
-                className="opacity-0 font-bold text-3xl blur-sm"
-                keyframes={defaultKeyframes}
-                keepStyles={defaultKeepStyles}
+                className="font-bold text-3xl"
             />
         ),
         listContent: [

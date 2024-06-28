@@ -1,18 +1,11 @@
 import Image from "next/image";
-import { useEffect, useRef } from "react";
-import resolveConfig from "tailwindcss/resolveConfig";
-import tailwindConfig from "@/tailwind.config";
+import { useEffect, useRef, useState } from "react";
 
-const fullConfig = resolveConfig(tailwindConfig);
-const [pinkColor, redColor] = [fullConfig.theme.colors.primary.pink, fullConfig.theme.colors.primary.red]
-const imageBoxShadow = fullConfig.theme.boxShadow.image.replace('theme("colors.primary.pink")', pinkColor).replace('theme("colors.primary.red")', redColor);
 
-export default function AnimatedImage({src, alt, className}) {
+export default function AnimatedImageV2({src, alt, className}) {
+    const [visible, setVisible] = useState(false);
+
     const targetRef = useRef(null);
-
-    const animationFill = "forwards";
-    const duration = 300;
-    const delay = 200;
     
     useEffect(() => {
         const options = {
@@ -26,46 +19,13 @@ export default function AnimatedImage({src, alt, className}) {
             const isContentBelow = entry.boundingClientRect.top > 0;
             const isContentAbove = entry.boundingClientRect.top < 0;
 
-            if (isSufficientlyIntersecting) {
+            if (isSufficientlyIntersecting || isContentAbove) {
                 // Animate to reveal
-                if (targetRef.current && targetRef.current.dataset.revealed !== "true") {
-                    const keyframes = [
-                        {
-                            boxShadow: imageBoxShadow,
-                            transform: "translate(-6px, -6px)",
-                            opacity: 1,
-                            easing: "ease-in-out"
-                        }
-                    ];
-
-                    targetRef.current.animate(keyframes, {fill: animationFill, duration, delay});
-                    targetRef.current.dataset.revealed = "true";
-                }
+                setVisible(true);
 
             } else if (isContentBelow) {
                 // Animate to hide
-                if (targetRef.current) {
-                    const keyframes = [
-                        {
-                            opacity: 0,
-                            transform: "translate(0%)",
-                            boxShadow: "none",
-                            easing: "ease-in-out"
-                        }
-                    ];
-
-                    targetRef.current.animate(keyframes, {fill: animationFill, duration, delay});
-                    targetRef.current.dataset.revealed = "false";
-                }
-            } else if (isContentAbove) {
-                // Set to revealed
-                if (targetRef.current) {
-                    targetRef.current.style.opacity = "1";
-                    targetRef.current.style["box-shadow"] = imageBoxShadow;
-                    targetRef.current.style.transform = "translate(-6px, -6px)";
-
-                    targetRef.current.dataset.revealed = "true";
-                }
+                setVisible(false);
             }
         });
 
@@ -73,10 +33,14 @@ export default function AnimatedImage({src, alt, className}) {
         if (targetRef.current) {
             observer.observe(targetRef.current);
         }
+
+        return () => {
+            observer.disconnect();
+        };
     }, []);
 
 
     return (
-        <Image ref={targetRef} src={src} alt={alt} data-revealed="false" className={`${className} opacity-0 rounded-md`}/>
+        <Image ref={targetRef} src={src} alt={alt} className={`${className} opacity-0 rounded-md transition-all duration-500 ease-in-out ${visible ? `!opacity-100 -translate-x-[6px] -translate-y-[6px] shadow-image` : ""}`}/>
     )
 }

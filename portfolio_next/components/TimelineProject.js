@@ -9,10 +9,7 @@ import { faLink } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function TimelineProject({ title, timeframe, logo, listContent, technologies, projectLinks, image }) {
-    const animationDuration = 500;
     const animationDirection = "left";
-    const technologyAnimationDelay = 50;
-    const projectLinkAnimationDelay = 50;
 
     return (
         <>
@@ -27,16 +24,12 @@ export default function TimelineProject({ title, timeframe, logo, listContent, t
                     {logo}
                     <HorizontalAnimatedText
                         direction={animationDirection}
-                        duration={animationDuration}
-                        delay={0}
                     >
                         <h2 className="text-3xl font-semibold">{title}</h2>
                     </HorizontalAnimatedText>
                 </div>
                 <HorizontalAnimatedText
                         direction={animationDirection}
-                        duration={animationDuration}
-                        delay={0}
                     >
                         <h3 className="font-semibold text-slate-400 contrast-more:text-white text-sm mt-2 mix-blend-screen">
                             {timeframe}
@@ -49,13 +42,13 @@ export default function TimelineProject({ title, timeframe, logo, listContent, t
                 {
                     technologies && technologies.length &&
                     <div className="mt-4 flex gap-x-2 flex-wrap">
-                        <HorizontalAnimatedText direction={animationDirection} duration={animationDuration} delay={0}>
+                        <HorizontalAnimatedText direction={animationDirection}>
                             <strong>Key technologies:</strong>
                         </HorizontalAnimatedText>
                         {
                             technologies && technologies.length &&
                             technologies.map((technology, idx) => (
-                                <HorizontalAnimatedText key={idx} direction={animationDirection} duration={animationDuration} delay={technologyAnimationDelay * (idx + 1)}>
+                                <HorizontalAnimatedText key={idx} direction={animationDirection}>
                                     <em>{technology}{idx === technologies.length - 1 ? "." : ","}</em>
                                 </HorizontalAnimatedText>
                             ))
@@ -65,14 +58,14 @@ export default function TimelineProject({ title, timeframe, logo, listContent, t
                 <small className="mt-4 flex gap-x-2 mb-16">
                     {
                         !!projectLinks.github &&
-                        <HorizontalAnimatedText direction={animationDirection} duration={animationDuration} delay={0}>
+                        <HorizontalAnimatedText direction={animationDirection}>
                             <BoxLink href={projectLinks.github}>
                                 <FontAwesomeIcon icon={faGithub} className='h-4'/>
                                 Github
                             </BoxLink>
                         </HorizontalAnimatedText>
                     }
-                    <HorizontalAnimatedText direction={animationDirection} duration={animationDuration} delay={projectLinkAnimationDelay}>
+                    <HorizontalAnimatedText direction={animationDirection}>
                         <BoxLink href={projectLinks.site}>
                             <FontAwesomeIcon icon={faLink} className='h-4'/>
                             View Site
