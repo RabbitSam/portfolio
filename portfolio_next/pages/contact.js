@@ -5,7 +5,7 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Layout from "@/components/Layout";
 import AnimatedHeading from "@/components/AnimatedHeading";
 import Button from "@/components/Button";
-import BoxLink from "@/components/BoxLink";
+import styles from "@/styles/Contact.module.css";
 import { useState } from "react";
 
 
@@ -89,7 +89,7 @@ export default function Contact() {
                             name="name"
                             id="contactName"
                             placeholder="Please enter your name."
-                            className="rounded-sm p-2 text-slate-950 disabled:bg-slate-500 disabled:cursor-not-allowed"
+                            className={styles.formInput}
                             required
                             disabled={isLoading}
                         />
@@ -100,7 +100,7 @@ export default function Contact() {
                             name="email"
                             id="contactEmail"
                             placeholder="Please enter your email address."
-                            className="rounded-sm p-2 text-slate-950 disabled:bg-slate-500 disabled:cursor-not-allowed"
+                            className={styles.formInput}
                             required
                             disabled={isLoading}
                         />
@@ -111,7 +111,7 @@ export default function Contact() {
                             name="subject"
                             id="contactSubject"
                             placeholder="Please enter a subject."
-                            className="rounded-sm p-2 text-slate-950 disabled:bg-slate-500 disabled:cursor-not-allowed"
+                            className={styles.formInput}
                             required
                             disabled={isLoading}
                         />
@@ -122,7 +122,7 @@ export default function Contact() {
                             id="contactMessage"
                             rows="10"
                             placeholder="Please enter your message."
-                            className="rounded-sm p-2 text-slate-950 disabled:bg-slate-500 disabled:cursor-not-allowed"
+                            className={styles.formInput}
                             required
                             disabled={isLoading}
                         >

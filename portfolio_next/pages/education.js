@@ -35,7 +35,7 @@ export default function Education() {
                     <DualTimelineItem
                         position={"right"}
                         title={
-                            <EducationTitle institutionTitle={"Monash University Malaysia, Malaysia"} degreeTitle={"Bachelor of Software Engineering (Honours)"} />
+                            <EducationTitle institutionTitle={"Monash University Malaysia"} degreeTitle={"Bachelor of Software Engineering (Honors)"} />
                         }
                         listContent={[
                             "Graduated with First Class Honours and a GPA of 3.625 (out of 4).",

@@ -6,10 +6,10 @@ import DualTimelineItem from "@/components/DualTimelineItem";
 
 const workExperiences = [
     {
-        companyTitle: "Client Projects",
-        jobTitle: "Web Developer",
+        companyTitle: "",
+        jobTitle: "Freelance Web Developer",
         listContent: [
-            "Created and maintained a responsive content management system.",
+            "Designed, created and deployed responsive content management systems.",
             "Developed fullstack web applications using Next.js, TypeScript, Node.js, MongoDB, and TailwindCSS.",
             "Created and maintained reusable functional components using React.js.",
             "Developed API end-points following the REST protocol.",
@@ -20,28 +20,29 @@ const workExperiences = [
             "Followed up-to-date web accessibility guidelines and used semantic HTML5 and ARIA to ensure deliverables were accessible for all.",
             "Hosted websites on Vercel.",
             "Designed responsive websites and interactions using Figma.",
+            "Ensured agile development through regular meetings with clients.",
             "Used Github with Git CLI for version control."
         ],
-        timeline: "May 2023 - July 2023"
+        timeline: "2023 - Present"
     },
     {
-        companyTitle: "VML (formerly Wunderman Thompson), Bangladesh",
+        companyTitle: "Hogarth (formerly Wunderman Thompson)",
         jobTitle: "Web Developer",
         listContent: [
             "Created and deployed 1000s of landing pages and EDMs for various Microsoft Events using semantic HTML5, CSS3, and JavaScript (ES6).",
             "Used responsive design to ensure deliverables were compatible with any device.",
             "Followed up-to-date accessibility guidelines and used semantic HTML5 and ARIA to ensure maximum content accessibility.",
-            "Created chrome extensions using HTML5, CSS3 and JavaScript (ES6)  to increase team productivity by 15%.",
+            "Created chrome extensions using HTML5, CSS3 and JavaScript (ES6) to increase team productivity by 15%.",
             "Used Salesforce Marketing Client (SFMC) for A/B testing and deployments.",
             "Where applicable, created reusable templates using Adobe Marketo and Adobe Experience Manager for easily repeatable deployments.",
             "Engaged in peer review to ensure quality results.",
             "Operated using agile methodologies and processes.",
         ],
-        timeline: "Jan 22 - Mar 23"
+        timeline: "2022 - 2023"
     },
     {
-        companyTitle: "Configura, Malaysia",
-        jobTitle: "Application Developer Intern",
+        companyTitle: "Configura",
+        jobTitle: "Web Developer Intern",
         listContent: [
             "Created and deployed 4 responsive Jira Dashboard Items using JavaScript, jQuery, semantic HTML5 and Java.",
             "Increased productivity of internal teams by 20%.",
@@ -54,7 +55,7 @@ const workExperiences = [
             "Worked with mentors and supervisors to ensure excellent UX.",
             "Operated using the scrum methodology.",
         ],
-        timeline: "Jul 19 - Dec 19"
+        timeline: "2019"
     }
 ];
 
@@ -62,7 +63,16 @@ const workExperiences = [
 function WorkTitle({ companyTitle, jobTitle}) {
     return (
         <>
-            {companyTitle} <br/>&ndash; <em className="font-semibold">{jobTitle}</em>
+            {
+                companyTitle.length ?
+                <>
+                    {companyTitle} <br/>&ndash; <em className="font-semibold">{jobTitle}</em>
+                </>
+                :
+                <>
+                    {jobTitle}
+                </>
+            }
         </>
     );
 }
