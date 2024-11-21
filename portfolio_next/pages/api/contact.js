@@ -1,4 +1,5 @@
 const nodemailer = require("nodemailer");
+import { stripHtml } from "string-strip-html";
 
 
 export default async function contact(req, res) {
@@ -18,7 +19,7 @@ export default async function contact(req, res) {
             to: "aquibmahmood1637@gmail.com",
             replyTo: email,
             subject: subject,
-            text: `<sent from: ${name} - (${email})>\n\n${message}`
+            text: `<sent from: ${name} - (${email})>\n\n${stripHtml(message).result}`
         }
 
         try {

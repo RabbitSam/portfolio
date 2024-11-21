@@ -16,7 +16,7 @@ import pompomImage from "@/public/images/pompom.png";
 const projects = [
     {
         title: "Pompom",
-        timeframe: "Jun 24",
+        timeframe: "2024",
         logo: (
             <AnimatedLogo
                 logo={(
@@ -47,7 +47,7 @@ const projects = [
     // Rejectionator
     {
         title: "Rejectionator",
-        timeframe: "Aug 23 - Aug 23",
+        timeframe: "2023",
         logo: (
             <AnimatedLogo 
                 logo={(
@@ -76,7 +76,7 @@ const projects = [
     // Portfolio site
     {
         title: "Portfolio Website",
-        timeframe: "Mar 23 - May 23",
+        timeframe: "2023",
         logo: (
             <AnimatedLogo 
                 logo="A"
@@ -109,7 +109,7 @@ const projects = [
     // Kanban Board
     {
         title: "Kanban Board",
-        timeframe: "Feb 23 - Mar 23",
+        timeframe: "2023",
         logo: (
             <AnimatedLogo 
                 logo={(

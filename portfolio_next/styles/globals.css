@@ -23,14 +23,11 @@ a {
 }
 
 .cursor {
-    @apply aspect-square w-40 absolute -z-50;
-	background-image: linear-gradient(to right, theme("colors.primary.pink"), theme("colors.primary.red"));
+    @apply aspect-square w-96 absolute -z-50 right-0 bottom-0;
+	background-image: linear-gradient(to right, theme("colors.primary.pink/0.75"), theme("colors.primary.red/0.75"));
 	background-repeat: no-repeat;
 	border-radius: 50%;
 	animation: animation-mouse 20s infinite linear;
-	left: 50%;
-	top: 50%;
-    translate: -50% -50%;
 }
 
 @keyframes animation-mouse {

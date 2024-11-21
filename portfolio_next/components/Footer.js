@@ -10,7 +10,7 @@ export default function Footer() {
                 <div className="w-full">
                     <div className='flex flex-col gap-y-3 pb-2 justify-between sm:items-center sm:flex-row sm:mb-0'>
                         <small className='text-slate-400 mix-blend-screen'>
-                            &copy; Sheikh Aquib Mahmood, 2023
+                            &copy; Sheikh Aquib Mahmood, 2023 - {(new Date()).getFullYear()}
                         </small>
                         <small className='flex flex-col gap-y-3 sm:flex-row sm:gap-x-2'>
                             <BoxLink href="https://github.com/RabbitSam">
