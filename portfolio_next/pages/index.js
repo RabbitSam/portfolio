@@ -26,7 +26,7 @@ export default function Home() {
 				<div className='flex flex-col-reverse gap-y-5 justify-end pt-5 pb-1 items-center h-full overflow-hidden lg:flex-row lg:gap-x-16 lg:justify-center lg:items-start lg:pt-20 lg:pb-0'>
 					<div className="overflow-visible flex flex-col justify-center items-center lg:items-start gap-y-3 sm:w-3/4 md:w-2/3 lg:w-1/3 mx-4 lg:mx-0">
 						<div className={`text-white select-none italic`}>
-							Web Developer with good working experience. Equipped with a versatile set of skills.
+							Frontend Developer specializing in React, Next.js, and scalable web applications. Experienced in delivering high-impact digital products in fast-paced environments, with a focus on performance, usability, and clean architecture.
 						</div>
 						<div className='flex flex-wrap gap-2 text-sm w-full'>
 							{

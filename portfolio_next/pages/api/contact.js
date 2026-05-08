@@ -27,7 +27,7 @@ export default async function contact(req, res) {
             console.log("Email sent: " + sentMail.response);
             res.status(200).json({message: 'Email sent: ' + sentMail.response});
         } catch (err) {
-            console.log(error);
+            console.log(err);
             res.status(500).json({message: err});
         }
         

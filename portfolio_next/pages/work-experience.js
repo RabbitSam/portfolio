@@ -26,7 +26,17 @@ const workExperiences = [
         timeline: "2023 - Present"
     },
     {
-        companyTitle: "Hogarth (formerly Wunderman Thompson)",
+        companyTitle: "Gatestone",
+        jobTitle: "Bilingual Team Leader",
+        listContent: [
+            "Perform call audits and coach agents, ensuring that agents are up-to-date on policies and processes, and maximizing their KPI targets.",
+            "Provide technical support with toolchains, core software and hardware where necessary.",
+            "Manage back-end support to agents in regards to complex or unordinary circumstances with out-of-the-box solutions within policy, meeting business goals and customer needs."
+        ],
+        timeline: "2025 - Present"
+    },
+    {
+        companyTitle: "WPP Production (formerly Wunderman Thompson)",
         jobTitle: "Web Developer",
         listContent: [
             "Created and deployed 1000s of landing pages and EDMs for various Microsoft Events using semantic HTML5, CSS3, and JavaScript (ES6).",
@@ -99,7 +109,7 @@ export default function WorkExperience() {
                     {
                         workExperiences.map((item, indx) => (
                             <DualTimelineItem
-                                position={indx % 2 === 0 ? "right" : "left"}
+                                position={indx % 2 === 0 ? "left" : "right"}
                                 title={
                                     <WorkTitle companyTitle={item.companyTitle} jobTitle={item.jobTitle} />
                                 }

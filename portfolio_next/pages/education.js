@@ -38,7 +38,9 @@ export default function Education() {
                             <EducationTitle institutionTitle={"Monash University Malaysia"} degreeTitle={"Bachelor of Software Engineering (Honors)"} />
                         }
                         listContent={[
-                            "Graduated with First Class Honours and a GPA of 3.625 (out of 4).",
+                            "Graduated with First Class Honours.",
+                            "GPA of 3.63 out of 4.00.",
+                            "Other achievements: Monash University Faculty of Engineering Dean’s Honors List, Monash High Achiever Award, Monash Industry-Based Learning Scholarship"
                         ]}
                         timeline={""}
                     />

@@ -85,7 +85,7 @@ export default function DualTimelineItemV2({ position, title, timeline, listCont
                 </div>
                 <div className={`col-span-10 flex flex-row sm:col-span-11 lg:col-span-5 transition-all ease-in-out delay-[50ms] duration-500 ${visible ? "" : `opacity-0 ${positionMap.order[position].content} ${positionMap.className[position]} sm:-translate-x-1.5`}`}>
                     <div className={`border-[20px] border-y-transparent border-s-transparent lg: bg-transparent border-white w-0 h-0 -translate-x-6 -translate-y-1.5 z-10 ${positionMap.leftTriangle[position]}`}></div>
-                    <div className={`border-2 w-full -translate-x-6 ${positionMap.translate[position]} -translate-y-10 p-3 rounded-lg shadow-image bg-slate-950 bg-opacity-60 ${positionMap.shadow[position]}`}>
+                    <div className={`border-2 w-full -translate-x-6 ${positionMap.translate[position]} -translate-y-10 p-3 pb-5 rounded-lg shadow-image bg-slate-950 bg-opacity-60 ${positionMap.shadow[position]}`}>
                         <h2 ref={targetRef} className="text-xl sm:text-2xl sm:self-center mb-2">
                             {title}
                         </h2>

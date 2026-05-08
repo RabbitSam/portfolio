@@ -65,12 +65,15 @@ export default function TimelineProject({ title, timeframe, logo, listContent, t
                             </BoxLink>
                         </HorizontalAnimatedText>
                     }
-                    <HorizontalAnimatedText direction={animationDirection}>
-                        <BoxLink href={projectLinks.site}>
-                            <FontAwesomeIcon icon={faLink} className='h-4'/>
-                            View Site
-                        </BoxLink>
-                    </HorizontalAnimatedText>
+                    {
+                        !!projectLinks.site &&
+                        <HorizontalAnimatedText direction={animationDirection}>
+                            <BoxLink href={projectLinks.site}>
+                                <FontAwesomeIcon icon={faLink} className='h-4'/>
+                                View Site
+                            </BoxLink>
+                        </HorizontalAnimatedText>
+                    }
                 </small>
             </div>
             <div className="col-span-11 hidden mb-7 lg:col-span-5 lg:block pt-5">

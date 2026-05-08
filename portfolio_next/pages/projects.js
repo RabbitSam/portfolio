@@ -14,13 +14,14 @@ import pompomImage from "@/public/images/pompom.png";
 
 
 const projects = [
+    // Pompom
     {
         title: "Pompom",
         timeframe: "2024",
         logo: (
             <AnimatedLogo
                 logo={(
-                    <Image src={logoPompom} alt="Pompom Logo." height="30" width="30" />
+                    <Image src={logoPompom} alt="Pompom Logo." height="40" width="40" />
                 )}
                 description={"Pompom Logo."}
             />
@@ -36,7 +37,7 @@ const projects = [
             "Used the fs module to keep records of projects and tasks."
         ],
         projectLinks: {
-            site: "https://github.com/RabbitSam/pompom/releases/tag/release",
+            site: "",
             github: "https://github.com/RabbitSam/pompom"
         },
         image: {
@@ -171,6 +172,7 @@ export default function Projects() {
                                 technologies={item.technologies}
                                 projectLinks={item.projectLinks}
                                 image={item.image}
+                                key={item.title}
                             />
                         ))
                     }
