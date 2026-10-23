@@ -132,7 +132,7 @@ export default function Contact() {
                             <Button type="submit" disabled={isLoading}>
                                 {isLoading && 
                                     <div className="relative flex flex-row gap-x-1.5 justify-center items-center">
-                                        <div className="bg-gradient-to-r from-primary-pink to-primary-red motion-safe:animate-spin motion-reduce:animate-pulse h-4 w-4 rounded-sm border">
+                                        <div className="bg-linear-to-r from-primary-pink to-primary-red motion-safe:animate-spin motion-reduce:animate-pulse h-4 w-4 rounded-xs border">
                                         </div>
                                         <div>Loading...</div>
                                     </div>

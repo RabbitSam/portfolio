@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 
-const DEFAULT_HIDDEN_CLASS_NAME = "opacity-0 blur-sm";
+const DEFAULT_HIDDEN_CLASS_NAME = "opacity-0 blur-xs";
 const DEFAULT_VISIBLE_CLASS_NAME = "opacity-1 blur-none";
 
 

@@ -83,8 +83,8 @@ const projects = [
                 logo="A"
                 description="Portfolio Website Logo."
                 className="font-bold text-3xl"
-                hiddenClassName="opacity-0 -translate-y-[3px]"
-                visibleClassName="opacity-100 [text-shadow:_3px_3px_0px_theme(colors.primary.pink),_6px_6px_0px_theme(colors.primary.red)]"
+                hiddenClassName="opacity-0 translate-y-[-3px]"
+                visibleClassName="opacity-100 [text-shadow:3px_3px_0px_var(--color-primary-pink),6px_6px_0px_var(--color-primary-red)]"
             />
         ),
         listContent: [

@@ -6,7 +6,7 @@ import BoxLink from "./BoxLink";
 export default function Footer() {
     return (
         <>
-            <footer className="flex-grow-0 flex-shrink">
+            <footer className="grow-0 shrink">
                 <div className="w-full">
                     <div className='flex flex-col gap-y-3 pb-2 justify-between sm:items-center sm:flex-row sm:mb-0'>
                         <small className='text-slate-400 mix-blend-screen'>

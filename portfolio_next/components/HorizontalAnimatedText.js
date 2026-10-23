@@ -6,7 +6,7 @@ export default function HorizontalAnimatedTextV2({ children, direction }) {
     const targetRef = useRef(null);
 
     const translateClasses = {
-        "left": "-translate-x-[110vw]",
+        "left": "translate-x-[-110vw]",
         "right": "translate-x-[110vw]",
     };
 
@@ -43,7 +43,7 @@ export default function HorizontalAnimatedTextV2({ children, direction }) {
 
     return (
         <div className="relative">
-            <div className={`${visible ? "" : `${translateClasses[direction]} blur-sm`} transition-all ease-in-out`}>{children}</div>
+            <div className={`${visible ? "" : `${translateClasses[direction]} blur-xs`} transition-all ease-in-out`}>{children}</div>
             {/* This second one helps to trigger the animation */}
             <div ref={targetRef} aria-hidden="true" className="opacity-0 select-none -z-50 absolute top-0 left-0">{children}</div>
         </div>

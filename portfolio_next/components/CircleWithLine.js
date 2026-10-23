@@ -47,7 +47,7 @@ export default function CircleWithLineV2({hideCircle}) {
             <div role="presentation" className="relative h-full">
                 <div className={`${styles.circle} ${hideCircle ? "" : visible ? styles.circleVisible : firstTime ? "" : styles.circleHidden}`}>
                     <div className="bg-transparent w-7 h-7 rounded-full border-slate-950 border-4" />
-                    <div className="bg-gradient-to-b from-primary-pink to-primary-red w-9 h-9 absolute -z-10 rounded-full blur-[1px] -left-1 -top-1" />
+                    <div className="bg-linear-to-b from-primary-pink to-primary-red w-9 h-9 absolute -z-10 rounded-full blur-[1px] -left-1 -top-1" />
                 </div>
                 <div ref={observeTargetRef} aria-hidden="true" className="opacity-0 w-9 h-9 absolute -z-50 rounded-full -left-1 -top-1" />
                 <div className={`h-full`}>

@@ -48,7 +48,7 @@ function AnimatedListItemV2({ children }) {
                         &bull;
                     </div>
                 </div>
-                <div className={`${visible ? "" : "-translate-x-[110vw] blur-sm"} transition-all duration-500 ease-in-out`}>
+                <div className={`${visible ? "" : "translate-x-[-110vw] blur-xs"} transition-all duration-500 ease-in-out`}>
                     {children}
                 </div>
             </li>
